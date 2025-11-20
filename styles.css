@@ -1363,79 +1363,31 @@ footer {
     cursor: pointer;
     flex-direction: column;
     gap: 6px;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 8px;
     transition: all 0.3s ease;
     position: relative;
     z-index: 101;
 }
 
-.hamburger:hover {
-    background: rgba(56, 189, 248, 0.15);
-    transform: scale(1.1) rotate(5deg);
-}
-
-.hamburger:active {
-    transform: scale(0.95);
-}
-
 .hamburger span {
     display: block;
-    width: 28px;
-    height: 3px;
+    width: 26px;
+    height: 2px;
     background-color: var(--accent);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-radius: 3px;
-    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
-    position: relative;
-}
-
-.hamburger span::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2s infinite;
-}
-
-.hamburger:hover span {
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
-}
-
-.hamburger.toggle {
-    background: rgba(56, 189, 248, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
 .hamburger.toggle span:nth-child(1) {
-    transform: rotate(-45deg) translate(-7px, 7px);
-    background: linear-gradient(135deg, var(--accent), #60a5fa);
-    animation: pulse 0.5s ease-out;
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger.toggle span:nth-child(2) {
     opacity: 0;
-    transform: scale(0) rotate(180deg);
 }
 
 .hamburger.toggle span:nth-child(3) {
-    transform: rotate(45deg) translate(-7px, -7px);
-    background: linear-gradient(135deg, var(--accent), #60a5fa);
-    animation: pulse 0.5s ease-out;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Menu Overlay */

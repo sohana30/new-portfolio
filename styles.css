@@ -136,6 +136,12 @@ nav ul li::before {
     margin-right: 5px;
     font-family: var(--font-mono);
     display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav ul li:hover::before {
+    transform: translateX(-3px);
+    text-shadow: 0 0 10px var(--accent-glow);
 }
 
 nav a {
@@ -143,7 +149,7 @@ nav a {
     text-decoration: none;
     font-family: var(--font-mono);
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     padding: 8px 0;
     display: inline-block;
@@ -156,8 +162,8 @@ nav a::before {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent);
-    transition: width 0.3s ease;
+    background: linear-gradient(90deg, var(--accent), #60a5fa);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 nav a::after {
@@ -168,8 +174,9 @@ nav a::after {
     width: 0;
     height: 2px;
     background: var(--accent);
-    box-shadow: 0 0 10px var(--accent-glow);
-    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--accent-glow);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+    opacity: 0.6;
 }
 
 nav a:hover::before,
@@ -180,6 +187,7 @@ nav a:hover::after {
 nav a:hover {
     color: var(--accent);
     transform: translateY(-2px);
+    letter-spacing: 0.5px;
 }
 
 /* Active nav link */

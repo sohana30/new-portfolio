@@ -672,10 +672,18 @@ footer {
 
     /* Project Details Responsive */
     .project-showcase {
-        margin: 60px auto 20px;
-        /* Reduced top/bottom margins */
-        padding: 0 15px;
-        /* Slightly reduced side padding */
+        margin: 85px auto 30px;
+        /* Clear fixed header */
+        padding: 0 20px;
+    }
+
+    .project-header {
+        margin-bottom: 30px;
+        /* Reduced spacing */
+    }
+
+    .project-header h1 {
+        margin-bottom: 10px;
     }
 
     .content-section {

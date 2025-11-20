@@ -125,6 +125,8 @@ nav ul {
 nav ul li {
     counter-increment: item;
     position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 nav ul li::before {
@@ -133,6 +135,7 @@ nav ul li::before {
     font-size: 0.75rem;
     margin-right: 5px;
     font-family: var(--font-mono);
+    display: inline-block;
 }
 
 nav a {

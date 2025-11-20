@@ -287,12 +287,22 @@ h2 {
 /* Skills Terminal */
 .terminal-window {
     background: #1e1e1e;
-    border-radius: 6px;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     font-family: var(--font-mono);
     max-width: 800px;
     margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terminal-window:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px -10px rgba(56, 189, 248, 0.15);
+    /* Blue glow on hover */
+    border-color: var(--accent);
 }
 
 .terminal-header {
@@ -610,9 +620,31 @@ footer {
     }
 
     .terminal-window {
-        margin: 0 -10px;
+        margin: 20px -10px;
         /* Slight bleed for terminal on mobile */
-        border-radius: 4px;
+        border-radius: 6px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .terminal-body {
+        padding: 15px;
+        font-size: 0.85rem;
+        /* Smaller font for mobile terminal */
+        overflow-x: auto;
+        /* Allow horizontal scroll for long commands */
+    }
+
+    .command-line {
+        margin-bottom: 8px;
+        white-space: nowrap;
+        /* Keep command on one line */
+    }
+
+    .output {
+        padding-left: 10px;
+        margin-bottom: 25px;
+        line-height: 1.6;
+        border-left: 2px solid #333;
     }
 
     .project-header h1 {

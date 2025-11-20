@@ -91,7 +91,7 @@ function initCanvas() {
 }
 
 function initScrollAnimations() {
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('section, .content-section');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

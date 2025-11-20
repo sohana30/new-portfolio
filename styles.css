@@ -103,7 +103,8 @@ header.scrolled {
     }
 }
 
-.logo:hover {
+.logo:hover,
+.logo:active {
     transform: scale(1.05);
     text-shadow: 0 0 20px var(--accent-glow);
 }
@@ -398,11 +399,13 @@ h2 {
     transition: opacity 0.3s ease;
 }
 
-.stat:hover::before {
+.stat:hover::before,
+.stat:active::before {
     opacity: 1;
 }
 
-.stat:hover {
+.stat:hover,
+.stat:active {
     transform: translateX(10px);
     border-left-width: 5px;
     box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
@@ -418,7 +421,8 @@ h2 {
     z-index: 1;
 }
 
-.stat:hover .number {
+.stat:hover .number,
+.stat:active .number {
     color: var(--accent);
     transform: scale(1.1);
 }
@@ -445,9 +449,10 @@ h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.terminal-window:hover {
+.terminal-window:hover,
+.terminal-window:active {
     transform: translateY(-5px);
-    box-shadow: 0 25px 60px -10px rgba(56, 189, 248, 0.15);
+    box-shadow: 0 15px 40px rgba(56, 189, 248, 0.2);
     /* Blue glow on hover */
     border-color: var(--accent);
 }
@@ -896,7 +901,8 @@ footer {
     transition: all 0.3s ease;
 }
 
-.timeline-item:hover {
+.timeline-item:hover,
+.timeline-item:active {
     transform: translateX(5px);
 }
 
@@ -914,7 +920,8 @@ footer {
     z-index: 2;
 }
 
-.timeline-item:hover::before {
+.timeline-item:hover::before,
+.timeline-item:active::before {
     width: 16px;
     height: 16px;
     left: -38px;
@@ -948,7 +955,8 @@ footer {
     transition: opacity 0.3s ease;
 }
 
-.timeline-item:hover::after {
+.timeline-item:hover::after,
+.timeline-item:active::after {
     opacity: 0.3;
 }
 
@@ -972,7 +980,8 @@ footer {
     transition: all 0.3s ease;
 }
 
-.timeline-item:hover .timeline-content {
+.timeline-item:hover .timeline-content,
+.timeline-item:active .timeline-content {
     border-color: var(--accent);
     box-shadow: 0 5px 20px rgba(56, 189, 248, 0.1);
     background: rgba(30, 41, 59, 0.8);
@@ -989,7 +998,8 @@ footer {
     gap: 8px;
 }
 
-.timeline-item:hover .timeline-content h4 {
+.timeline-item:hover .timeline-content h4,
+.timeline-item:active .timeline-content h4 {
     color: var(--accent);
 }
 
@@ -1069,7 +1079,8 @@ footer {
     transition: all 0.3s ease;
 }
 
-.edu-card:hover::before {
+.edu-card:hover::before,
+.edu-card:active::before {
     opacity: 0.3;
     transform: rotate(15deg) scale(1.2);
 }
@@ -1087,11 +1098,13 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.edu-card:hover::after {
+.edu-card:hover::after,
+.edu-card:active::after {
     transform: scaleX(1);
 }
 
-.edu-card:hover {
+.edu-card:hover,
+.edu-card:active {
     border-color: var(--accent);
     transform: translateY(-10px) rotateX(5deg);
     box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
@@ -1217,10 +1230,11 @@ footer {
     transition: all 0.3s ease;
 }
 
-.cert-list li:hover {
+.cert-list li:hover,
+.cert-list li:active {
     background: rgba(56, 189, 248, 0.1);
     transform: translateX(5px);
-    border-left-width: 5px;
+    border-left-color: var(--accent);
 }
 
 .cert-list li::before {

@@ -7,7 +7,7 @@
     <title>Cloud Migration & Optimization - Project Showcase</title>
     <meta name="description"
         content="Migration of legacy databases to AWS cloud infrastructure with Docker containerization and cost optimization.">
-    <link rel="stylesheet" href="../../styles.css?v=1">
+    <link rel="stylesheet" href="../../styles.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -53,63 +53,106 @@
             </div>
         </div>
 
-        <div class="project-content">
-            <div class="content-section">
-                <h2>📊 Project Overview</h2>
-                <p>A large-scale infrastructure modernization project moving legacy on-premise MySQL databases to AWS
-                    Cloud. The initiative involved containerizing application microservices using Docker, implementing
-                    Infrastructure as Code (IaC) with Terraform, and establishing a modern data warehouse on AWS
-                    Redshift.</p>
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <nav class="project-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Key Features</a></li>
+                        <li><a href="#challenges">Challenges & Solutions</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <span class="metric-value">35%</span>
-                        <span class="metric-label">Cost Reduction</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-value">84%</span>
-                        <span class="metric-label">Faster Queries</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-value">99.99%</span>
-                        <span class="metric-label">Uptime</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-value">15min</span>
-                        <span class="metric-label">Backup Time</span>
+            <div class="project-main">
+                <div id="overview" class="content-section">
+                    <h2>📊 Project Overview</h2>
+                    <p>A large-scale infrastructure modernization project moving legacy on-premise MySQL databases to
+                        AWS
+                        Cloud. The initiative involved containerizing application microservices using Docker,
+                        implementing
+                        Infrastructure as Code (IaC) with Terraform, and establishing a modern data warehouse on AWS
+                        Redshift.</p>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-value">35%</span>
+                            <span class="metric-label">Cost Reduction</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">84%</span>
+                            <span class="metric-label">Faster Queries</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">99.99%</span>
+                            <span class="metric-label">Uptime</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">15min</span>
+                            <span class="metric-label">Backup Time</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content-section">
-                <h2>🎯 Key Features</h2>
-                <ul>
-                    <li><strong>Zero-Downtime Migration:</strong> Utilized AWS DMS (Database Migration Service) for
-                        seamless transition</li>
-                    <li><strong>Containerization:</strong> Dockerized 5+ microservices for consistent deployment across
-                        environments</li>
-                    <li><strong>Infrastructure as Code:</strong> Fully automated resource provisioning using Terraform
-                    </li>
-                    <li><strong>Data Warehousing:</strong> ETL pipelines moving data from RDS to Redshift for analytics
-                    </li>
-                    <li><strong>Security Hardening:</strong> Implemented VPCs, security groups, and IAM roles following
-                        least privilege</li>
-                </ul>
-            </div>
+                <div id="features" class="content-section">
+                    <h2>🎯 Key Features</h2>
+                    <ul>
+                        <li><strong>Zero-Downtime Migration:</strong> Utilized AWS DMS (Database Migration Service) for
+                            seamless transition</li>
+                        <li><strong>Containerization:</strong> Dockerized 5+ microservices for consistent deployment
+                            across
+                            environments</li>
+                        <li><strong>Infrastructure as Code:</strong> Fully automated resource provisioning using
+                            Terraform
+                        </li>
+                        <li><strong>Data Warehousing:</strong> ETL pipelines moving data from RDS to Redshift for
+                            analytics
+                        </li>
+                        <li><strong>Security Hardening:</strong> Implemented VPCs, security groups, and IAM roles
+                            following
+                            least privilege</li>
+                    </ul>
+                </div>
 
-            <div class="content-section">
-                <h2>🏗️ Architecture</h2>
-                <h3>Migration Steps</h3>
-                <ul>
-                    <li><strong>Assess:</strong> Analyzed 500GB+ legacy data and dependencies</li>
-                    <li><strong>Containerize:</strong> Created optimized Docker images for services</li>
-                    <li><strong>Provision:</strong> Deployed AWS infrastructure via Terraform</li>
-                    <li><strong>Migrate:</strong> Executed data transfer with CDC replication</li>
-                </ul>
+                <div id="challenges" class="content-section">
+                    <h2>⚡ Challenges & Solutions</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>Downtime Minimization</h3>
+                            <p>Minimizing downtime during the migration of a critical production database.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Used AWS DMS with Change Data Capture (CDC) to replicate data in real-time, allowing
+                                    for a seamless cutover with less than 5 minutes of downtime.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Environment Consistency</h3>
+                            <p>Managing dependencies and environment inconsistencies across dev and prod.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Dockerized all microservices and implemented a multi-stage build process, ensuring
+                                    identical environments and reducing deployment errors by 90%.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <h3>Code Example - Docker Optimization</h3>
-                <div class="code-preview">
-                    <pre>
+                <div id="architecture" class="content-section">
+                    <h2>🏗️ Architecture</h2>
+                    <h3>Migration Steps</h3>
+                    <ul>
+                        <li><strong>Assess:</strong> Analyzed 500GB+ legacy data and dependencies</li>
+                        <li><strong>Containerize:</strong> Created optimized Docker images for services</li>
+                        <li><strong>Provision:</strong> Deployed AWS infrastructure via Terraform</li>
+                        <li><strong>Migrate:</strong> Executed data transfer with CDC replication</li>
+                    </ul>
+
+                    <h3>Code Example - Docker Optimization</h3>
+                    <div class="code-preview">
+                        <pre>
 # Multi-stage build for reduced image size
 FROM python:3.9-slim as builder
 WORKDIR /app
@@ -123,6 +166,7 @@ COPY --from=builder /root/.local /root/.local
 COPY . .
 ENV PATH=/root/.local/bin:$PATH
 CMD ["python", "app.py"]</pre>
+                    </div>
                 </div>
             </div>
         </div>

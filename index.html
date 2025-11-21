@@ -101,50 +101,40 @@
                     </div>
                     <div class="title">root@sohana:~/skills</div>
                 </div>
-                <div class="terminal-body">
-                    <div class="command-line">
-                        <span class="prompt">root@sohana:~/skills$</span> cat languages.json
+                <div class="terminal-layout">
+                    <div class="terminal-sidebar">
+                        <div class="sidebar-header">EXPLORER</div>
+                        <ul class="file-list">
+                            <li class="file-item active" data-file="languages">
+                                <span class="file-icon json">{}</span>
+                                <span class="file-name">languages.json</span>
+                            </li>
+                            <li class="file-item" data-file="frameworks">
+                                <span class="file-icon yaml">!</span>
+                                <span class="file-name">frameworks.yaml</span>
+                            </li>
+                            <li class="file-item" data-file="infrastructure">
+                                <span class="file-icon shell">$_</span>
+                                <span class="file-name">infrastructure.sh</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="output json-output type-effect" data-text='[
-  "Python",
-  "SQL",
-  "Java",
-  "JavaScript",
-  "C++",
-  "PHP"
-]'>
-                    </div>
-
-                    <div class="command-line">
-                        <span class="prompt">root@sohana:~/skills$</span> cat frameworks.yaml
-                    </div>
-                    <div class="output yaml-output type-effect" data-text='frontend:
-  - React.js
-  - Next.js
-  - Vue.js
-  - TailwindCSS
-
-backend:
-  - Node.js
-  - Laravel
-  - .NET
-  - Drupal
-
-testing:
-  - Selenium
-  - Cypress
-  - Playwright
-  - JUnit'>
-                    </div>
-
-                    <div class="command-line">
-                        <span class="prompt">root@sohana:~/skills$</span> ./check_infrastructure.sh
-                    </div>
-                    <div class="output script-output type-effect" data-text="[OK] Snowflake Cloud Data Platform
-[OK] AWS Cloud Computing
-[OK] Docker & Containerization
-[OK] Git Version Control
-[OK] CI/CD Pipelines">
+                    <div class="terminal-content">
+                        <div class="tab-bar">
+                            <div class="tab active" data-file="languages">
+                                <span class="file-icon json">{}</span>
+                                languages.json
+                                <span class="tab-close">×</span>
+                            </div>
+                        </div>
+                        <div class="code-area">
+                            <div class="line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
+                            </div>
+                            <div class="code-display" id="code-display">
+                                <!-- Content injected by JS -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

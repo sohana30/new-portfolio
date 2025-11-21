@@ -7,7 +7,7 @@
     <title>Snowflake ETL Pipeline - Project Showcase</title>
     <meta name="description"
         content="Production-grade ETL pipeline built with Python and Snowflake for retail data processing">
-    <link rel="stylesheet" href="../../styles.css?v=1">
+    <link rel="stylesheet" href="../../styles.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -53,64 +53,106 @@
             </div>
         </div>
 
-        <div class="project-content">
-            <div class="content-section">
-                <h2>📊 Project Overview</h2>
-                <p>A production-grade ETL (Extract, Transform, Load) pipeline designed to process retail transaction
-                    data at scale. Built with Python and Snowflake Cloud Data Platform, this system handles data
-                    extraction from multiple sources, applies comprehensive transformations and quality checks, and
-                    efficiently loads data into Snowflake for analytics.</p>
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <nav class="project-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Key Features</a></li>
+                        <li><a href="#challenges">Challenges & Solutions</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#highlights">Technical Highlights</a></li>
+                        <li><a href="#impact">Business Impact</a></li>
+                        <li><a href="#future">Future Enhancements</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <span class="metric-value">50K+</span>
-                        <span class="metric-label">Rows/Second</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-value">99.9%</span>
-                        <span class="metric-label">Data Accuracy</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-value">95%</span>
-                        <span class="metric-label">Test Coverage</span>
-                    </div>
-                    <div class="metric-card">
-                        <span class="metric-value">60%</span>
-                        <span class="metric-label">Speed Improvement</span>
+            <div class="project-main">
+                <div id="overview" class="content-section">
+                    <h2>📊 Project Overview</h2>
+                    <p>A production-grade ETL (Extract, Transform, Load) pipeline designed to process retail transaction
+                        data at scale. Built with Python and Snowflake Cloud Data Platform, this system handles data
+                        extraction from multiple sources, applies comprehensive transformations and quality checks, and
+                        efficiently loads data into Snowflake for analytics.</p>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-value">50K+</span>
+                            <span class="metric-label">Rows/Second</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Data Accuracy</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">95%</span>
+                            <span class="metric-label">Test Coverage</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">Speed Improvement</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="content-section">
-                <h2>🎯 Key Features</h2>
-                <ul>
-                    <li><strong>Multi-Source Extraction:</strong> Supports CSV, JSON, and REST API data sources</li>
-                    <li><strong>Data Quality Validation:</strong> Automated checks for null values, data types,
-                        duplicates, and constraints</li>
-                    <li><strong>Scalable Architecture:</strong> Optimized for bulk loading using Snowflake's
-                        write_pandas function</li>
-                    <li><strong>Error Handling:</strong> Comprehensive logging and retry mechanisms for production
-                        reliability</li>
-                    <li><strong>Testing Suite:</strong> Unit tests with pytest ensuring code quality and reliability
-                    </li>
-                    <li><strong>Documentation:</strong> Complete setup guide and API documentation</li>
-                </ul>
-            </div>
+                <div id="features" class="content-section">
+                    <h2>🎯 Key Features</h2>
+                    <ul>
+                        <li><strong>Multi-Source Extraction:</strong> Supports CSV, JSON, and REST API data sources</li>
+                        <li><strong>Data Quality Validation:</strong> Automated checks for null values, data types,
+                            duplicates, and constraints</li>
+                        <li><strong>Scalable Architecture:</strong> Optimized for bulk loading using Snowflake's
+                            write_pandas function</li>
+                        <li><strong>Error Handling:</strong> Comprehensive logging and retry mechanisms for production
+                            reliability</li>
+                        <li><strong>Testing Suite:</strong> Unit tests with pytest ensuring code quality and reliability
+                        </li>
+                        <li><strong>Documentation:</strong> Complete setup guide and API documentation</li>
+                    </ul>
+                </div>
 
-            <div class="content-section">
-                <h2>🏗️ Architecture</h2>
-                <h3>Pipeline Flow</h3>
-                <ul>
-                    <li><strong>Extract:</strong> DataExtractor pulls data from configured sources (CSV, JSON, APIs)
-                    </li>
-                    <li><strong>Transform:</strong> DataTransformer cleans, validates, and enriches the data</li>
-                    <li><strong>Load:</strong> SnowflakeLoader efficiently writes data to Snowflake tables</li>
-                    <li><strong>Orchestration:</strong> Main pipeline coordinates all steps with error handling</li>
-                </ul>
+                <div id="challenges" class="content-section">
+                    <h2>⚡ Challenges & Solutions</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>Data Skew</h3>
+                            <p>Handling data skew during bulk loads which caused performance bottlenecks and uneven
+                                warehouse utilization.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Implemented a chunking strategy and optimized the Snowflake warehouse size
+                                    dynamically based on load volume, reducing load times by 40%.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Schema Consistency</h3>
+                            <p>Ensuring data consistency across multiple source formats (CSV, JSON) with varying
+                                structures.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Developed a flexible schema validation layer using Pydantic models to enforce strict
+                                    typing before data enters the pipeline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <h3>Code Example - ETL Pipeline</h3>
-                <div class="code-preview">
-                    <pre>
+                <div id="architecture" class="content-section">
+                    <h2>🏗️ Architecture</h2>
+                    <h3>Pipeline Flow</h3>
+                    <ul>
+                        <li><strong>Extract:</strong> DataExtractor pulls data from configured sources (CSV, JSON, APIs)
+                        </li>
+                        <li><strong>Transform:</strong> DataTransformer cleans, validates, and enriches the data</li>
+                        <li><strong>Load:</strong> SnowflakeLoader efficiently writes data to Snowflake tables</li>
+                        <li><strong>Orchestration:</strong> Main pipeline coordinates all steps with error handling</li>
+                    </ul>
+
+                    <h3>Code Example - ETL Pipeline</h3>
+                    <div class="code-preview">
+                        <pre>
 # Initialize ETL Pipeline
 pipeline = ETLPipeline(config)
 
@@ -126,44 +168,49 @@ pipeline.run(
 # ✓ Transformed data: 49,850 rows (150 invalid removed)
 # ✓ Loaded to Snowflake: 49,850 rows
 # ✓ Pipeline completed in 45 seconds</pre>
+                    </div>
                 </div>
-            </div>
 
-            <div class="content-section">
-                <h2>💡 Technical Highlights</h2>
-                <ul>
-                    <li><strong>Snowflake Integration:</strong> Leverages Snowflake Connector for Python with optimized
-                        bulk loading</li>
-                    <li><strong>Data Quality Score:</strong> Each row gets a quality score based on completeness and
-                        validation rules</li>
-                    <li><strong>Modular Design:</strong> Separate modules for extract, transform, and load operations
-                        enable reusability</li>
-                    <li><strong>Environment Management:</strong> Uses python-dotenv for secure credential handling</li>
-                    <li><strong>SQL Schema Management:</strong> Includes DDL scripts for creating Snowflake tables with
-                        proper indexing</li>
-                </ul>
-            </div>
+                <div id="highlights" class="content-section">
+                    <h2>💡 Technical Highlights</h2>
+                    <ul>
+                        <li><strong>Snowflake Integration:</strong> Leverages Snowflake Connector for Python with
+                            optimized
+                            bulk loading</li>
+                        <li><strong>Data Quality Score:</strong> Each row gets a quality score based on completeness and
+                            validation rules</li>
+                        <li><strong>Modular Design:</strong> Separate modules for extract, transform, and load
+                            operations
+                            enable reusability</li>
+                        <li><strong>Environment Management:</strong> Uses python-dotenv for secure credential handling
+                        </li>
+                        <li><strong>SQL Schema Management:</strong> Includes DDL scripts for creating Snowflake tables
+                            with
+                            proper indexing</li>
+                    </ul>
+                </div>
 
-            <div class="content-section">
-                <h2>📈 Business Impact</h2>
-                <ul>
-                    <li>Reduced data loading time by <strong>60%</strong> using bulk insert operations</li>
-                    <li>Achieved <strong>99.9% data accuracy</strong> through automated validation</li>
-                    <li>Enabled real-time analytics for <strong>5+ departments</strong></li>
-                    <li>Processed over <strong>1M+ transactions</strong> in production</li>
-                    <li>Designed reusable components used across multiple projects</li>
-                </ul>
-            </div>
+                <div id="impact" class="content-section">
+                    <h2>📈 Business Impact</h2>
+                    <ul>
+                        <li>Reduced data loading time by <strong>60%</strong> using bulk insert operations</li>
+                        <li>Achieved <strong>99.9% data accuracy</strong> through automated validation</li>
+                        <li>Enabled real-time analytics for <strong>5+ departments</strong></li>
+                        <li>Processed over <strong>1M+ transactions</strong> in production</li>
+                        <li>Designed reusable components used across multiple projects</li>
+                    </ul>
+                </div>
 
-            <div class="content-section">
-                <h2>🚀 Future Enhancements</h2>
-                <ul>
-                    <li>Apache Airflow DAG for automated scheduling and orchestration</li>
-                    <li>Incremental loading with Change Data Capture (CDC)</li>
-                    <li>Real-time streaming integration with Apache Kafka</li>
-                    <li>Data lineage tracking and visualization</li>
-                    <li>Monitoring dashboard with Grafana</li>
-                </ul>
+                <div id="future" class="content-section">
+                    <h2>🚀 Future Enhancements</h2>
+                    <ul>
+                        <li>Apache Airflow DAG for automated scheduling and orchestration</li>
+                        <li>Incremental loading with Change Data Capture (CDC)</li>
+                        <li>Real-time streaming integration with Apache Kafka</li>
+                        <li>Data lineage tracking and visualization</li>
+                        <li>Monitoring dashboard with Grafana</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

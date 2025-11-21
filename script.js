@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNav();
     initScrollToTop();
     initContactForm();
+    initParallax();
+    initTerminal();
 });
 
 function initCanvas() {
@@ -114,46 +116,215 @@ function initScrollAnimations() {
         observer.observe(section);
     });
 
-    // Terminal Typing Effect
-    const terminal = document.querySelector('.terminal-window');
-    const typeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startTypingEffect();
-                typeObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    if (terminal) {
-        typeObserver.observe(terminal);
-    }
+    sections.forEach(section => {
+        section.style.opacity = 0;
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(section);
+    });
 }
 
-function startTypingEffect() {
-    const outputs = document.querySelectorAll('.type-effect');
+function initTerminal() {
+    const terminal = document.querySelector('.terminal-window');
+    if (!terminal) return;
 
-    outputs.forEach((output, index) => {
-        const text = output.getAttribute('data-text');
-        output.textContent = ''; // Clear initial content
-        output.style.opacity = 1;
+    const files = {
+        'languages': {
+            name: 'languages.json',
+            type: 'json',
+            content: `[
+  {
+    "language": "Python",
+    "proficiency": "Expert",
+    "usage": "Data Engineering, ETL, Scripting",
+    "years_experience": 4
+  },
+  {
+    "language": "SQL",
+    "proficiency": "Advanced",
+    "usage": "Data Warehousing, Analytics",
+    "dialects": ["Snowflake", "PostgreSQL", "MySQL"]
+  },
+  {
+    "language": "JavaScript",
+    "proficiency": "Intermediate",
+    "usage": "Frontend, Visualization",
+    "frameworks": ["React", "D3.js"]
+  },
+  {
+    "language": "Java",
+    "proficiency": "Intermediate",
+    "usage": "Backend Services",
+    "years_experience": 2
+  }
+]`
+        },
+        'frameworks': {
+            name: 'frameworks.yaml',
+            type: 'yaml',
+            content: `# Frontend Development
+frontend:
+  core:
+    - name: React.js
+      version: 18.x
+      features: [Hooks, Context API]
+    - name: Next.js
+      type: SSR/SSG framework
+  styling:
+    - TailwindCSS
+    - SCSS/SASS
 
-        setTimeout(() => {
-            let i = 0;
-            const typeInterval = setInterval(() => {
-                if (i < text.length) {
-                    output.textContent += text.charAt(i);
-                    i++;
-                } else {
-                    clearInterval(typeInterval);
-                    // After typing completes, replace [OK] with styled spans
-                    if (output.classList.contains('script-output')) {
-                        output.innerHTML = output.textContent.replace(/\[OK\]/g, '<span class="success">[OK]</span>');
-                    }
-                }
-            }, 5); // Typing speed - faster for better engagement
-        }, index * 600); // Delay between each block - shorter for better flow
+# Backend & API
+backend:
+  runtime: Node.js (v16+)
+  frameworks:
+    - Express.js
+    - Fastify
+  database_orm:
+    - Prisma
+    - Mongoose
+
+# Data Engineering
+data_stack:
+  processing: [Pandas, NumPy, Spark]
+  orchestration: [Airflow, Prefect]
+  warehousing: [Snowflake, Redshift]`
+        },
+        'infrastructure': {
+            name: 'infrastructure.sh',
+            type: 'shell',
+            content: `#!/bin/bash
+
+echo "Initializing system health check..."
+sleep 0.5
+
+# Cloud Infrastructure
+check_service "AWS Cloud" "us-east-1" "Active"
+check_service "Snowflake Data Cloud" "Enterprise" "Connected"
+
+# Containerization
+check_container "Docker Engine" "v24.0.2" "Running"
+check_container "Kubernetes Cluster" "v1.27" "Healthy"
+
+# CI/CD Pipelines
+check_pipeline "GitHub Actions" "Build & Test" "Passing"
+check_pipeline "Terraform State" "Remote Backend" "Locked"
+
+echo "----------------------------------------"
+echo "System Status: ALL SYSTEMS OPERATIONAL"
+echo "Ready for deployment."`
+        }
+    };
+
+    const codeDisplay = document.getElementById('code-display');
+    const lineNumbers = document.querySelector('.line-numbers');
+    const fileItems = document.querySelectorAll('.file-item');
+    const tab = document.querySelector('.tab');
+
+    let currentTypeInterval = null;
+
+    function loadFile(fileKey) {
+        const file = files[fileKey];
+        if (!file) return;
+
+        // Update active states
+        fileItems.forEach(item => {
+            if (item.dataset.file === fileKey) item.classList.add('active');
+            else item.classList.remove('active');
+        });
+
+        // Update tab
+        tab.innerHTML = `
+            <span class="file-icon ${file.type}">${getFileIcon(file.type)}</span>
+            ${file.name}
+            <span class="tab-close">×</span>
+        `;
+        tab.dataset.file = fileKey;
+
+        // Clear previous typing
+        if (currentTypeInterval) clearInterval(currentTypeInterval);
+
+        // Reset display
+        codeDisplay.innerHTML = '';
+        updateLineNumbers(file.content);
+
+        // Start typing effect
+        typeContent(file.content, file.type);
+    }
+
+    function getFileIcon(type) {
+        if (type === 'json') return '{}';
+        if (type === 'yaml') return '!';
+        if (type === 'shell') return '$_';
+        return '';
+    }
+
+    function updateLineNumbers(content) {
+        const lines = content.split('\\n').length;
+        lineNumbers.innerHTML = Array(lines).fill(0).map((_, i) => `<span>${i + 1}</span>`).join('');
+    }
+
+    function typeContent(content, type) {
+        let i = 0;
+        // Faster typing for better UX
+        const speed = 2;
+
+        currentTypeInterval = setInterval(() => {
+            if (i < content.length) {
+                const char = content.charAt(i);
+                codeDisplay.textContent += char;
+                // Basic syntax highlighting applied after typing each char would be too heavy
+                // So we apply it at the end or use a simpler approach
+                i++;
+
+                // Auto scroll to bottom
+                const codeArea = document.querySelector('.code-area');
+                codeArea.scrollTop = codeArea.scrollHeight;
+            } else {
+                clearInterval(currentTypeInterval);
+                applySyntaxHighlighting(codeDisplay, type);
+            }
+        }, speed);
+    }
+
+    function applySyntaxHighlighting(element, type) {
+        let html = element.textContent;
+
+        if (type === 'json') {
+            html = html.replace(/"([^"]+)":/g, '<span class="token-key">"$1":</span>')
+                .replace(/"([^"]+)"(?!\s*:)/g, '<span class="token-string">"$1"</span>')
+                .replace(/\b(\d+)\b/g, '<span class="token-number">$1</span>');
+        } else if (type === 'yaml') {
+            html = html.replace(/^(\s*)([\w.-]+):/gm, '$1<span class="token-key">$2:</span>')
+                .replace(/- (.+)$/gm, '- <span class="token-string">$1</span>');
+        } else if (type === 'shell') {
+            html = html.replace(/(#.+)$/gm, '<span class="token-comment">$1</span>')
+                .replace(/"([^"]+)"/g, '<span class="token-string">"$1"</span>')
+                .replace(/\b(check_service)\b/g, '<span class="token-function">$1</span>');
+        }
+
+        element.innerHTML = html;
+    }
+
+    // Event Listeners
+    fileItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const fileKey = item.dataset.file;
+            loadFile(fileKey);
+        });
     });
+
+    // Initialize with first file when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                loadFile('languages');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(terminal);
 }
 
 
@@ -333,3 +504,15 @@ function initContactForm() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', initContactForm);
+function initParallax() {
+    const hero = document.getElementById('hero');
+    const heroContent = document.querySelector('.hero-content');
+
+    window.addEventListener('scroll', () => {
+        const scroll = window.pageYOffset;
+        if (scroll < 800) {
+            heroContent.style.transform = `translateY(${scroll * 0.4}px)`;
+            heroContent.style.opacity = 1 - scroll / 700;
+        }
+    });
+}

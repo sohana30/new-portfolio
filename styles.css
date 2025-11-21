@@ -210,6 +210,8 @@ main {
 section {
     padding: 100px 0;
     min-height: 100vh;
+    min-height: 100dvh;
+    /* Better for mobile browsers */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -286,50 +288,50 @@ h2 {
 .glitch::before {
     left: 2px;
     text-shadow: -1px 0 #ff00c1;
-    clip: rect(44px, 450px, 56px, 0);
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
     animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 .glitch::after {
     left: -2px;
     text-shadow: -1px 0 #00fff9;
-    clip: rect(44px, 450px, 56px, 0);
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
     animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim {
     0% {
-        clip: rect(30px, 9999px, 10px, 0);
+        clip-path: polygon(0 10%, 100% 10%, 100% 30%, 0 30%);
     }
 
     5% {
-        clip: rect(80px, 9999px, 90px, 0);
+        clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
     }
 
     10% {
-        clip: rect(10px, 9999px, 40px, 0);
+        clip-path: polygon(0 80%, 100% 80%, 100% 90%, 0 90%);
     }
 
     100% {
-        clip: rect(30px, 9999px, 10px, 0);
+        clip-path: polygon(0 10%, 100% 10%, 100% 30%, 0 30%);
     }
 }
 
 @keyframes glitch-anim2 {
     0% {
-        clip: rect(60px, 9999px, 70px, 0);
+        clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
     }
 
     5% {
-        clip: rect(20px, 9999px, 30px, 0);
+        clip-path: polygon(0 20%, 100% 20%, 100% 30%, 0 30%);
     }
 
     10% {
-        clip: rect(90px, 9999px, 100px, 0);
+        clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
     }
 
     100% {
-        clip: rect(60px, 9999px, 70px, 0);
+        clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
     }
 }
 
@@ -531,7 +533,7 @@ h2 {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    /* cursor: pointer; Removed as card itself is not clickable */
 }
 
 .project-card::before {
@@ -566,6 +568,8 @@ h2 {
     mask-composite: exclude;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Fix: Allow clicks to pass through */
 }
 
 .project-card:hover::after,
@@ -585,6 +589,9 @@ h2 {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+    /* Fix: Ensure links are clickable */
 }
 
 .folder-icon {

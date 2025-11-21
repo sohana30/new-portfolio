@@ -144,6 +144,10 @@ function startTypingEffect() {
                     i++;
                 } else {
                     clearInterval(typeInterval);
+                    // After typing completes, replace [OK] with styled spans
+                    if (output.classList.contains('script-output')) {
+                        output.innerHTML = output.textContent.replace(/\[OK\]/g, '<span class="success">[OK]</span>');
+                    }
                 }
             }, 10); // Typing speed
         }, index * 1000); // Delay between each block

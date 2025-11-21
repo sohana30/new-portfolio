@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initActiveNav();
     initScrollToTop();
+    initContactForm();
 });
 
 function initCanvas() {
@@ -290,5 +291,57 @@ function initScrollToTop() {
             top: 0,
             behavior: 'smooth'
         });
+    });
+}
+
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const statusDiv = document.querySelector('.form-status');
+    const submitBtn = form.querySelector('.submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        statusDiv.className = 'form-status';
+        statusDiv.textContent = '';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success
+                statusDiv.className = 'form-status success';
+                statusDiv.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+                form.reset();
+            } else {
+                // Error
+                statusDiv.className = 'form-status error';
+                statusDiv.textContent = '✗ Oops! Something went wrong. Please try again.';
+            }
+        } catch (error) {
+            // Network error
+            statusDiv.className = 'form-status error';
+            statusDiv.textContent = '✗ Network error. Please check your connection and try again.';
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+        }
     });
 }

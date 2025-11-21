@@ -497,7 +497,7 @@ h2 {
 
 /* Skills Terminal */
 .terminal-window {
-    background: #1e1e1e;
+    background: #0c0c0c;
     border-radius: 8px;
     box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -518,7 +518,7 @@ h2 {
 }
 
 .terminal-header {
-    background: #2d2d2d;
+    background: #1a1a1a;
     padding: 10px 15px;
     display: flex;
     align-items: center;
@@ -556,23 +556,68 @@ h2 {
 .terminal-body {
     padding: 20px;
     color: #d4d4d4;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .command-line {
     margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .prompt {
     color: var(--accent);
-    margin-right: 10px;
+    font-weight: bold;
 }
 
 .output {
     margin-bottom: 20px;
-    color: var(--text-secondary);
-    padding-left: 20px;
-    border-left: 1px solid #333;
     white-space: pre-wrap;
+    font-family: var(--font-mono);
+}
+
+.json-output {
+    color: #ce9178;
+    /* JSON string color */
+}
+
+.yaml-output {
+    color: #9cdcfe;
+    /* YAML key color */
+}
+
+.script-output {
+    color: #d4d4d4;
+}
+
+.success {
+    color: #10b981;
+    /* Green for success */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #d4d4d4;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 /* Projects Section */

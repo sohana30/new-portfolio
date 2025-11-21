@@ -103,40 +103,52 @@
                 </div>
                 <div class="terminal-body">
                     <div class="command-line">
-                        <span class="prompt">root@sohana:~$</span> cat testing_tools.json
+                        <span class="prompt">root@sohana:~/skills$</span> cat languages.json
                     </div>
-                    <div class="output type-effect"
-                        data-text='[ "Selenium", "Cypress", "Playwright", "JUnit", "J-meter", "Browser Stack", "Manual/Regression Testing" ]'>
-                        [ "Selenium", "Cypress", "Playwright", "JUnit", "J-meter", "Browser Stack", "Manual/Regression
-                        Testing" ]
-                    </div>
-
-                    <div class="command-line">
-                        <span class="prompt">root@sohana:~$</span> list --frontend-backend
-                    </div>
-                    <div class="output type-effect"
-                        data-text="> Front: React.js, Next.js, Vue.js, Bootstrap, Sass, jQuery\n> Back: Node.js, Laravel, .NET, Drupal, Firebase\n> DB: MySQL, MongoDB, Microsoft Server 2008">
-                        > Front: React.js, Next.js, Vue.js, Bootstrap, Sass, jQuery
-                        > Back: Node.js, Laravel, .NET, Drupal, Firebase
-                        > DB: MySQL, MongoDB, Microsoft Server 2008
+                    <div class="output json-output">
+                        [
+                        "Python",
+                        "SQL",
+                        "Java",
+                        "JavaScript",
+                        "C++",
+                        "PHP"
+                        ]
                     </div>
 
                     <div class="command-line">
-                        <span class="prompt">root@sohana:~$</span> check --cloud-tools
+                        <span class="prompt">root@sohana:~/skills$</span> cat frameworks.yaml
                     </div>
-                    <div class="output type-effect"
-                        data-text="[OK] Snowflake Cloud Data Platform\n[OK] AWS Cloud Computing\n[OK] Docker, Lando\n[OK] Git, Jira, Confluence, Trello">
-                        [OK] Snowflake Cloud Data Platform
-                        [OK] AWS Cloud Computing
-                        [OK] Docker, Lando
-                        [OK] Git, Jira, Confluence, Trello
+                    <div class="output yaml-output">
+                        frontend:
+                        - React.js
+                        - Next.js
+                        - Vue.js
+                        - TailwindCSS
+
+                        backend:
+                        - Node.js
+                        - Laravel
+                        - .NET
+                        - Drupal
+
+                        testing:
+                        - Selenium
+                        - Cypress
+                        - Playwright
+                        - JUnit
                     </div>
 
                     <div class="command-line">
-                        <span class="prompt">root@sohana:~$</span> echo $LANGUAGES
+                        <span class="prompt">root@sohana:~/skills$</span> ./check_infrastructure.sh
                     </div>
-                    <div class="output type-effect" data-text="Python, Java, C, C++, SQL, JavaScript, PHP">
-                        Python, Java, C, C++, SQL, JavaScript, PHP
+                    <div class="output script-output">
+                        <span class="success">[OK]</span> Snowflake Cloud Data Platform
+                        <span class="success">[OK]</span> AWS Cloud Computing
+                        <span class="success">[OK]</span> Docker & Containerization
+                        <span class="success">[OK]</span> Git Version Control
+                        <span class="success">[OK]</span> CI/CD Pipelines
+                        <span class="cursor">_</span>
                     </div>
                 </div>
             </div>

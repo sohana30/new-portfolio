@@ -50,7 +50,7 @@ function initCanvas() {
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = '#38bdf8';
+            ctx.fillStyle = '#8b5cf6';
             ctx.fill();
         }
     }
@@ -78,7 +78,7 @@ function initCanvas() {
 
                 if (distance < connectionDistance) {
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(56, 189, 248, ${1 - distance / connectionDistance})`;
+                    ctx.strokeStyle = `rgba(139, 92, 246, ${1 - distance / connectionDistance})`;
                     ctx.lineWidth = 1;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);

@@ -351,7 +351,8 @@ h2 {
 
 .glitch::before {
     left: 2px;
-    text-shadow: -1px 0 #ff00c1;
+    text-shadow: -1px 0 #c084fc;
+    /* Bright purple for contrast */
     clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
     animation: glitch-anim 5s infinite linear alternate-reverse;
@@ -359,7 +360,8 @@ h2 {
 
 .glitch::after {
     left: -2px;
-    text-shadow: -1px 0 #00fff9;
+    text-shadow: -1px 0 #06b6d4;
+    /* Bright cyan for contrast */
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
     animation: glitch-anim2 5s infinite linear alternate-reverse;
@@ -541,7 +543,7 @@ h2 {
 .terminal-header {
     background: #252526;
     /* VS Code Title Bar */
-    padding: 6px 10px;
+    padding: 8px 12px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #333;
@@ -555,21 +557,26 @@ h2 {
 }
 
 .buttons span {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .close {
-    background: #ff5f56;
+    background: #ff5f57;
+    /* macOS red */
 }
 
 .minimize {
-    background: #ffbd2e;
+    background: #febc2e;
+    /* macOS yellow */
 }
 
 .maximize {
-    background: #27c93f;
+    background: #28c840;
+    /* macOS green */
 }
 
 .buttons span {
@@ -578,10 +585,10 @@ h2 {
     justify-content: center;
     color: transparent;
     font-size: 14px;
-    font-weight: 900;
+    font-weight: 400;
     padding: 0;
     line-height: 1;
-    transition: color 0.2s;
+    transition: color 0.15s ease;
 }
 
 .buttons:hover span {
@@ -589,19 +596,34 @@ h2 {
 }
 
 .close::before {
-    content: '✕';
-    font-weight: 900;
+    content: '×';
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 0.5px currentColor;
 }
 
 .minimize::before {
     content: '−';
-    font-weight: 900;
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 0.5px currentColor;
 }
 
 .maximize::before {
-    content: '⤡';
+    content: '⤢';
     font-size: 12px;
-    font-weight: 900;
+    font-weight: 400;
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 0.3px currentColor;
 }
 
 .title {

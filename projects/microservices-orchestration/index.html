@@ -212,57 +212,57 @@
                     <h3>1. Saga Pattern - Order Processing</h3>
                     <div class="code-preview">
                         <pre>
-// Choreography-based Saga for Order Creation
-class OrderSaga {
-  async createOrder(orderData) {
-    const orderId = await this.orderService.create(orderData);
+<span class="comment">// Choreography-based Saga for Order Creation</span>
+<span class="keyword">class</span> <span class="class-name">OrderSaga</span> {
+  <span class="keyword">async</span> <span class="function">createOrder</span>(orderData) {
+    <span class="keyword">const</span> orderId <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">orderService</span>.<span class="function">create</span>(orderData);
     
-    // Publish event to trigger next steps
-    await this.eventBus.publish('OrderCreated', {
+    <span class="comment">// Publish event to trigger next steps</span>
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">eventBus</span>.<span class="function">publish</span>(<span class="string">'OrderCreated'</span>, {
       orderId,
       customerId: orderData.customerId,
       items: orderData.items,
       total: orderData.total
     });
     
-    return orderId;
+    <span class="keyword">return</span> orderId;
   }
   
-  // Compensating transaction
-  async handlePaymentFailed(event) {
-    const { orderId } = event;
+  <span class="comment">// Compensating transaction</span>
+  <span class="keyword">async</span> <span class="function">handlePaymentFailed</span>(event) {
+    <span class="keyword">const</span> { orderId } <span class="operator">=</span> event;
     
-    // Rollback inventory reservation
-    await this.eventBus.publish('CancelInventoryReservation', {
+    <span class="comment">// Rollback inventory reservation</span>
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">eventBus</span>.<span class="function">publish</span>(<span class="string">'CancelInventoryReservation'</span>, {
       orderId
     });
     
-    // Update order status
-    await this.orderService.updateStatus(orderId, 'FAILED');
+    <span class="comment">// Update order status</span>
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">orderService</span>.<span class="function">updateStatus</span>(orderId, <span class="string">'FAILED'</span>);
     
-    // Notify customer
-    await this.eventBus.publish('OrderFailed', {
+    <span class="comment">// Notify customer</span>
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">eventBus</span>.<span class="function">publish</span>(<span class="string">'OrderFailed'</span>, {
       orderId,
-      reason: 'Payment processing failed'
+      reason: <span class="string">'Payment processing failed'</span>
     });
   }
 }
 
-// Event Handlers
-eventBus.subscribe('OrderCreated', async (event) => {
-  // Reserve inventory
-  await inventoryService.reserve(event.items);
-  await eventBus.publish('InventoryReserved', event);
+<span class="comment">// Event Handlers</span>
+eventBus.<span class="function">subscribe</span>(<span class="string">'OrderCreated'</span>, <span class="keyword">async</span> (event) <span class="operator">=&gt;</span> {
+  <span class="comment">// Reserve inventory</span>
+  <span class="keyword">await</span> inventoryService.<span class="function">reserve</span>(event.items);
+  <span class="keyword">await</span> eventBus.<span class="function">publish</span>(<span class="string">'InventoryReserved'</span>, event);
 });
 
-eventBus.subscribe('InventoryReserved', async (event) => {
-  // Process payment
-  const result = await paymentService.charge(event.total);
+eventBus.<span class="function">subscribe</span>(<span class="string">'InventoryReserved'</span>, <span class="keyword">async</span> (event) <span class="operator">=&gt;</span> {
+  <span class="comment">// Process payment</span>
+  <span class="keyword">const</span> result <span class="operator">=</span> <span class="keyword">await</span> paymentService.<span class="function">charge</span>(event.total);
   
-  if (result.success) {
-    await eventBus.publish('PaymentCompleted', event);
-  } else {
-    await eventBus.publish('PaymentFailed', event);
+  <span class="keyword">if</span> (result.success) {
+    <span class="keyword">await</span> eventBus.<span class="function">publish</span>(<span class="string">'PaymentCompleted'</span>, event);
+  } <span class="keyword">else</span> {
+    <span class="keyword">await</span> eventBus.<span class="function">publish</span>(<span class="string">'PaymentFailed'</span>, event);
   }
 });</pre>
                     </div>
@@ -270,89 +270,89 @@ eventBus.subscribe('InventoryReserved', async (event) => {
                     <h3>2. Circuit Breaker Pattern</h3>
                     <div class="code-preview">
                         <pre>
-// Circuit Breaker for external API calls
-class CircuitBreaker {
-  constructor(threshold = 5, timeout = 60000) {
-    this.failureCount = 0;
-    this.threshold = threshold;
-    this.timeout = timeout;
-    this.state = 'CLOSED'; // CLOSED, OPEN, HALF_OPEN
-    this.nextAttempt = Date.now();
+<span class="comment">// Circuit Breaker for external API calls</span>
+<span class="keyword">class</span> <span class="class-name">CircuitBreaker</span> {
+  <span class="function">constructor</span>(threshold <span class="operator">=</span> <span class="number">5</span>, timeout <span class="operator">=</span> <span class="number">60000</span>) {
+    <span class="keyword">this</span>.<span class="property">failureCount</span> <span class="operator">=</span> <span class="number">0</span>;
+    <span class="keyword">this</span>.<span class="property">threshold</span> <span class="operator">=</span> threshold;
+    <span class="keyword">this</span>.<span class="property">timeout</span> <span class="operator">=</span> timeout;
+    <span class="keyword">this</span>.<span class="property">state</span> <span class="operator">=</span> <span class="string">'CLOSED'</span>; <span class="comment">// CLOSED, OPEN, HALF_OPEN</span>
+    <span class="keyword">this</span>.<span class="property">nextAttempt</span> <span class="operator">=</span> <span class="class-name">Date</span>.<span class="function">now</span>();
   }
   
-  async execute(fn) {
-    if (this.state === 'OPEN') {
-      if (Date.now() < this.nextAttempt) {
-        throw new Error('Circuit breaker is OPEN');
+  <span class="keyword">async</span> <span class="function">execute</span>(fn) {
+    <span class="keyword">if</span> (<span class="keyword">this</span>.<span class="property">state</span> <span class="operator">===</span> <span class="string">'OPEN'</span>) {
+      <span class="keyword">if</span> (<span class="class-name">Date</span>.<span class="function">now</span>() <span class="operator">&lt;</span> <span class="keyword">this</span>.<span class="property">nextAttempt</span>) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="class-name">Error</span>(<span class="string">'Circuit breaker is OPEN'</span>);
       }
-      this.state = 'HALF_OPEN';
+      <span class="keyword">this</span>.<span class="property">state</span> <span class="operator">=</span> <span class="string">'HALF_OPEN'</span>;
     }
     
-    try {
-      const result = await fn();
-      this.onSuccess();
-      return result;
-    } catch (error) {
-      this.onFailure();
-      throw error;
+    <span class="keyword">try</span> {
+      <span class="keyword">const</span> result <span class="operator">=</span> <span class="keyword">await</span> <span class="function">fn</span>();
+      <span class="keyword">this</span>.<span class="function">onSuccess</span>();
+      <span class="keyword">return</span> result;
+    } <span class="keyword">catch</span> (error) {
+      <span class="keyword">this</span>.<span class="function">onFailure</span>();
+      <span class="keyword">throw</span> error;
     }
   }
   
-  onSuccess() {
-    this.failureCount = 0;
-    this.state = 'CLOSED';
+  <span class="function">onSuccess</span>() {
+    <span class="keyword">this</span>.<span class="property">failureCount</span> <span class="operator">=</span> <span class="number">0</span>;
+    <span class="keyword">this</span>.<span class="property">state</span> <span class="operator">=</span> <span class="string">'CLOSED'</span>;
   }
   
-  onFailure() {
-    this.failureCount++;
-    if (this.failureCount >= this.threshold) {
-      this.state = 'OPEN';
-      this.nextAttempt = Date.now() + this.timeout;
+  <span class="function">onFailure</span>() {
+    <span class="keyword">this</span>.<span class="property">failureCount</span><span class="operator">++</span>;
+    <span class="keyword">if</span> (<span class="keyword">this</span>.<span class="property">failureCount</span> <span class="operator">&gt;=</span> <span class="keyword">this</span>.<span class="property">threshold</span>) {
+      <span class="keyword">this</span>.<span class="property">state</span> <span class="operator">=</span> <span class="string">'OPEN'</span>;
+      <span class="keyword">this</span>.<span class="property">nextAttempt</span> <span class="operator">=</span> <span class="class-name">Date</span>.<span class="function">now</span>() <span class="operator">+</span> <span class="keyword">this</span>.<span class="property">timeout</span>;
     }
   }
 }
 
-// Usage
-const paymentBreaker = new CircuitBreaker(5, 60000);
-const result = await paymentBreaker.execute(() => 
-  paymentAPI.processCharge(amount)
+<span class="comment">// Usage</span>
+<span class="keyword">const</span> paymentBreaker <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">CircuitBreaker</span>(<span class="number">5</span>, <span class="number">60000</span>);
+<span class="keyword">const</span> result <span class="operator">=</span> <span class="keyword">await</span> paymentBreaker.<span class="function">execute</span>(() <span class="operator">=&gt;</span> 
+  paymentAPI.<span class="function">processCharge</span>(amount)
 );</pre>
                     </div>
 
                     <h3>3. Event Sourcing</h3>
                     <div class="code-preview">
                         <pre>
-// Event Store for Order Aggregate
-class OrderEventStore {
-  async appendEvent(orderId, event) {
-    await db.events.insert({
+<span class="comment">// Event Store for Order Aggregate</span>
+<span class="keyword">class</span> <span class="class-name">OrderEventStore</span> {
+  <span class="keyword">async</span> <span class="function">appendEvent</span>(orderId, event) {
+    <span class="keyword">await</span> db.<span class="property">events</span>.<span class="function">insert</span>({
       aggregateId: orderId,
-      aggregateType: 'Order',
+      aggregateType: <span class="string">'Order'</span>,
       eventType: event.type,
       eventData: event.data,
-      timestamp: new Date(),
-      version: await this.getNextVersion(orderId)
+      timestamp: <span class="keyword">new</span> <span class="class-name">Date</span>(),
+      version: <span class="keyword">await</span> <span class="keyword">this</span>.<span class="function">getNextVersion</span>(orderId)
     });
     
-    // Publish to event bus
-    await eventBus.publish(event.type, {
+    <span class="comment">// Publish to event bus</span>
+    <span class="keyword">await</span> eventBus.<span class="function">publish</span>(event.type, {
       orderId,
       ...event.data
     });
   }
   
-  async rehydrateAggregate(orderId) {
-    const events = await db.events.find({
+  <span class="keyword">async</span> <span class="function">rehydrateAggregate</span>(orderId) {
+    <span class="keyword">const</span> events <span class="operator">=</span> <span class="keyword">await</span> db.<span class="property">events</span>.<span class="function">find</span>({
       aggregateId: orderId,
-      aggregateType: 'Order'
-    }).sort({ version: 1 });
+      aggregateType: <span class="string">'Order'</span>
+    }).<span class="function">sort</span>({ version: <span class="number">1</span> });
     
-    // Rebuild state from events
-    let order = new Order();
-    for (const event of events) {
-      order = order.apply(event);
+    <span class="comment">// Rebuild state from events</span>
+    <span class="keyword">let</span> order <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">Order</span>();
+    <span class="keyword">for</span> (<span class="keyword">const</span> event <span class="keyword">of</span> events) {
+      order <span class="operator">=</span> order.<span class="function">apply</span>(event);
     }
-    return order;
+    <span class="keyword">return</span> order;
   }
 }</pre>
                     </div>

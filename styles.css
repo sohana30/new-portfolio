@@ -3568,6 +3568,54 @@ footer {
     tab-size: 4;
 }
 
+/* Syntax Highlighting */
+.code-preview .keyword {
+    color: #ff7b72;
+}
+
+/* Pink/Red for keywords like class, async, return */
+.code-preview .function {
+    color: #d2a8ff;
+}
+
+/* Purple for function names */
+.code-preview .string {
+    color: #a5d6ff;
+}
+
+/* Light Blue for strings */
+.code-preview .comment {
+    color: #8b949e;
+    font-style: italic;
+}
+
+/* Grey for comments */
+.code-preview .number {
+    color: #79c0ff;
+}
+
+/* Blue for numbers */
+.code-preview .class-name {
+    color: #f0883e;
+}
+
+/* Orange for class names */
+.code-preview .operator {
+    color: #ff7b72;
+}
+
+/* Pink/Red for operators */
+.code-preview .property {
+    color: #79c0ff;
+}
+
+/* Blue for properties */
+.code-preview .punctuation {
+    color: #e6edf3;
+}
+
+/* Default color for punctuation */
+
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

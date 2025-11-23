@@ -154,21 +154,21 @@
                     <h3>Code Example - ETL Pipeline</h3>
                     <div class="code-preview">
                         <pre>
-# Initialize ETL Pipeline
-pipeline = ETLPipeline(config)
+<span class="comment"># Initialize ETL Pipeline</span>
+pipeline <span class="operator">=</span> <span class="class-name">ETLPipeline</span>(config)
 
-# Run complete pipeline
-pipeline.run(
-    source_path='data/raw/transactions.csv',
-    target_table='RETAIL_TRANSACTIONS',
-    source_type='csv'
+<span class="comment"># Run complete pipeline</span>
+pipeline.<span class="function">run</span>(
+    source_path<span class="operator">=</span><span class="string">'data/raw/transactions.csv'</span>,
+    target_table<span class="operator">=</span><span class="string">'RETAIL_TRANSACTIONS'</span>,
+    source_type<span class="operator">=</span><span class="string">'csv'</span>
 )
 
-# Output:
-# ✓ Extracted 50,000 rows
-# ✓ Transformed data: 49,850 rows (150 invalid removed)
-# ✓ Loaded to Snowflake: 49,850 rows
-# ✓ Pipeline completed in 45 seconds</pre>
+<span class="comment"># Output:</span>
+<span class="comment"># ✓ Extracted 50,000 rows</span>
+<span class="comment"># ✓ Transformed data: 49,850 rows (150 invalid removed)</span>
+<span class="comment"># ✓ Loaded to Snowflake: 49,850 rows</span>
+<span class="comment"># ✓ Pipeline completed in 45 seconds</span></pre>
                     </div>
                 </div>
 

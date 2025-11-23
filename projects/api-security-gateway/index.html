@@ -160,72 +160,72 @@
           <h3>Code Example - JWT Middleware</h3>
           <div class="code-preview">
             <pre>
-// JWT Authentication Middleware
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
+<span class="comment">// JWT Authentication Middleware</span>
+<span class="keyword">const</span> jwt <span class="operator">=</span> <span class="function">require</span>(<span class="string">'jsonwebtoken'</span>);
+<span class="keyword">const</span> { promisify } <span class="operator">=</span> <span class="function">require</span>(<span class="string">'util'</span>);
 
-class JWTMiddleware {
-  constructor(publicKey, redisClient) {
-    this.publicKey = publicKey;
-    this.redis = redisClient;
-    this.verify = promisify(jwt.verify);
+<span class="keyword">class</span> <span class="class-name">JWTMiddleware</span> {
+  <span class="function">constructor</span>(publicKey, redisClient) {
+    <span class="keyword">this</span>.<span class="property">publicKey</span> <span class="operator">=</span> publicKey;
+    <span class="keyword">this</span>.<span class="property">redis</span> <span class="operator">=</span> redisClient;
+    <span class="keyword">this</span>.<span class="property">verify</span> <span class="operator">=</span> <span class="function">promisify</span>(jwt.verify);
   }
 
-  async authenticate(req, res, next) {
-    try {
-      // Extract token from Authorization header
-      const token = this.extractToken(req);
-      if (!token) {
-        return res.status(401).json({ error: 'No token provided' });
+  <span class="keyword">async</span> <span class="function">authenticate</span>(req, res, next) {
+    <span class="keyword">try</span> {
+      <span class="comment">// Extract token from Authorization header</span>
+      <span class="keyword">const</span> token <span class="operator">=</span> <span class="keyword">this</span>.<span class="function">extractToken</span>(req);
+      <span class="keyword">if</span> (<span class="operator">!</span>token) {
+        <span class="keyword">return</span> res.<span class="function">status</span>(<span class="number">401</span>).<span class="function">json</span>({ error: <span class="string">'No token provided'</span> });
       }
 
-      // Check if token is revoked
-      const isRevoked = await this.redis.get(`revoked:${token}`);
-      if (isRevoked) {
-        return res.status(401).json({ error: 'Token has been revoked' });
+      <span class="comment">// Check if token is revoked</span>
+      <span class="keyword">const</span> isRevoked <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">redis</span>.<span class="function">get</span>(<span class="string">`revoked:${token}`</span>);
+      <span class="keyword">if</span> (isRevoked) {
+        <span class="keyword">return</span> res.<span class="function">status</span>(<span class="number">401</span>).<span class="function">json</span>({ error: <span class="string">'Token has been revoked'</span> });
       }
 
-      // Verify token signature and claims
-      const decoded = await this.verify(token, this.publicKey, {
-        algorithms: ['RS256'],
-        issuer: 'api-gateway',
-        audience: 'api-services'
+      <span class="comment">// Verify token signature and claims</span>
+      <span class="keyword">const</span> decoded <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="function">verify</span>(token, <span class="keyword">this</span>.<span class="property">publicKey</span>, {
+        algorithms: [<span class="string">'RS256'</span>],
+        issuer: <span class="string">'api-gateway'</span>,
+        audience: <span class="string">'api-services'</span>
       });
 
-      // Check permissions
-      if (!this.hasRequiredPermissions(decoded, req.route)) {
-        return res.status(403).json({ error: 'Insufficient permissions' });
+      <span class="comment">// Check permissions</span>
+      <span class="keyword">if</span> (<span class="operator">!</span><span class="keyword">this</span>.<span class="function">hasRequiredPermissions</span>(decoded, req.route)) {
+        <span class="keyword">return</span> res.<span class="function">status</span>(<span class="number">403</span>).<span class="function">json</span>({ error: <span class="string">'Insufficient permissions'</span> });
       }
 
-      // Attach user info to request
-      req.user = {
+      <span class="comment">// Attach user info to request</span>
+      req.user <span class="operator">=</span> {
         id: decoded.sub,
         email: decoded.email,
         permissions: decoded.permissions,
         tokenId: decoded.jti
       };
 
-      next();
-    } catch (error) {
-      if (error.name === 'TokenExpiredError') {
-        return res.status(401).json({ error: 'Token expired' });
+      <span class="function">next</span>();
+    } <span class="keyword">catch</span> (error) {
+      <span class="keyword">if</span> (error.name <span class="operator">===</span> <span class="string">'TokenExpiredError'</span>) {
+        <span class="keyword">return</span> res.<span class="function">status</span>(<span class="number">401</span>).<span class="function">json</span>({ error: <span class="string">'Token expired'</span> });
       }
-      return res.status(401).json({ error: 'Invalid token' });
+      <span class="keyword">return</span> res.<span class="function">status</span>(<span class="number">401</span>).<span class="function">json</span>({ error: <span class="string">'Invalid token'</span> });
     }
   }
 
-  extractToken(req) {
-    const authHeader = req.headers.authorization;
-    if (authHeader && authHeader.startsWith('Bearer ')) {
-      return authHeader.substring(7);
+  <span class="function">extractToken</span>(req) {
+    <span class="keyword">const</span> authHeader <span class="operator">=</span> req.headers.authorization;
+    <span class="keyword">if</span> (authHeader <span class="operator">&amp;&amp;</span> authHeader.<span class="function">startsWith</span>(<span class="string">'Bearer '</span>)) {
+      <span class="keyword">return</span> authHeader.<span class="function">substring</span>(<span class="number">7</span>);
     }
-    return null;
+    <span class="keyword">return</span> <span class="keyword">null</span>;
   }
 
-  hasRequiredPermissions(decoded, route) {
-    const requiredPermissions = route.permissions || [];
-    const userPermissions = decoded.permissions || [];
-    return requiredPermissions.every(p => userPermissions.includes(p));
+  <span class="function">hasRequiredPermissions</span>(decoded, route) {
+    <span class="keyword">const</span> requiredPermissions <span class="operator">=</span> route.permissions <span class="operator">||</span> [];
+    <span class="keyword">const</span> userPermissions <span class="operator">=</span> decoded.permissions <span class="operator">||</span> [];
+    <span class="keyword">return</span> requiredPermissions.<span class="function">every</span>(p <span class="operator">=&gt;</span> userPermissions.<span class="function">includes</span>(p));
   }
 }</pre>
           </div>
@@ -237,88 +237,88 @@ class JWTMiddleware {
           <h3>Rate Limiting Strategy</h3>
           <div class="code-preview">
             <pre>
-// Sliding Window Rate Limiter
-class SlidingWindowRateLimiter {
-  constructor(redisClient) {
-    this.redis = redisClient;
+<span class="comment">// Sliding Window Rate Limiter</span>
+<span class="keyword">class</span> <span class="class-name">SlidingWindowRateLimiter</span> {
+  <span class="function">constructor</span>(redisClient) {
+    <span class="keyword">this</span>.<span class="property">redis</span> <span class="operator">=</span> redisClient;
   }
 
-  async checkLimit(identifier, limit, windowMs) {
-    const now = Date.now();
-    const windowStart = now - windowMs;
-    const key = `ratelimit:${identifier}`;
+  <span class="keyword">async</span> <span class="function">checkLimit</span>(identifier, limit, windowMs) {
+    <span class="keyword">const</span> now <span class="operator">=</span> <span class="class-name">Date</span>.<span class="function">now</span>();
+    <span class="keyword">const</span> windowStart <span class="operator">=</span> now <span class="operator">-</span> windowMs;
+    <span class="keyword">const</span> key <span class="operator">=</span> <span class="string">`ratelimit:${identifier}`</span>;
 
-    // Remove old entries outside window
-    await this.redis.zremrangebyscore(key, 0, windowStart);
+    <span class="comment">// Remove old entries outside window</span>
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">redis</span>.<span class="function">zremrangebyscore</span>(key, <span class="number">0</span>, windowStart);
 
-    // Count requests in current window
-    const count = await this.redis.zcard(key);
+    <span class="comment">// Count requests in current window</span>
+    <span class="keyword">const</span> count <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">redis</span>.<span class="function">zcard</span>(key);
 
-    if (count >= limit) {
-      const oldestRequest = await this.redis.zrange(key, 0, 0, 'WITHSCORES');
-      const resetTime = parseInt(oldestRequest[1]) + windowMs;
+    <span class="keyword">if</span> (count <span class="operator">&gt;=</span> limit) {
+      <span class="keyword">const</span> oldestRequest <span class="operator">=</span> <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">redis</span>.<span class="function">zrange</span>(key, <span class="number">0</span>, <span class="number">0</span>, <span class="string">'WITHSCORES'</span>);
+      <span class="keyword">const</span> resetTime <span class="operator">=</span> <span class="function">parseInt</span>(oldestRequest[<span class="number">1</span>]) <span class="operator">+</span> windowMs;
       
-      throw new RateLimitError({
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="class-name">RateLimitError</span>({
         limit,
-        remaining: 0,
-        resetAt: new Date(resetTime)
+        remaining: <span class="number">0</span>,
+        resetAt: <span class="keyword">new</span> <span class="class-name">Date</span>(resetTime)
       });
     }
 
-    // Add current request
-    await this.redis.zadd(key, now, `${now}:${Math.random()}`);
-    await this.redis.pexpire(key, windowMs);
+    <span class="comment">// Add current request</span>
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">redis</span>.<span class="function">zadd</span>(key, now, <span class="string">`${now}:${Math.random()}`</span>);
+    <span class="keyword">await</span> <span class="keyword">this</span>.<span class="property">redis</span>.<span class="function">pexpire</span>(key, windowMs);
 
-    return {
+    <span class="keyword">return</span> {
       limit,
-      remaining: limit - count - 1,
-      resetAt: new Date(now + windowMs)
+      remaining: limit <span class="operator">-</span> count <span class="operator">-</span> <span class="number">1</span>,
+      resetAt: <span class="keyword">new</span> <span class="class-name">Date</span>(now <span class="operator">+</span> windowMs)
     };
   }
 }
 
-// Multi-tier rate limiting
-app.use(async (req, res, next) => {
-  const limiter = new SlidingWindowRateLimiter(redis);
+<span class="comment">// Multi-tier rate limiting</span>
+app.<span class="function">use</span>(<span class="keyword">async</span> (req, res, next) <span class="operator">=&gt;</span> {
+  <span class="keyword">const</span> limiter <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">SlidingWindowRateLimiter</span>(redis);
   
-  try {
-    // Tier 1: Per-IP rate limit (strict)
-    await limiter.checkLimit(
-      `ip:${req.ip}`, 
-      1000,  // 1000 requests
-      60000  // per minute
+  <span class="keyword">try</span> {
+    <span class="comment">// Tier 1: Per-IP rate limit (strict)</span>
+    <span class="keyword">await</span> limiter.<span class="function">checkLimit</span>(
+      <span class="string">`ip:${req.ip}`</span>, 
+      <span class="number">1000</span>,  <span class="comment">// 1000 requests</span>
+      <span class="number">60000</span>  <span class="comment">// per minute</span>
     );
     
-    // Tier 2: Per-user rate limit (if authenticated)
-    if (req.user) {
-      await limiter.checkLimit(
-        `user:${req.user.id}`,
-        5000,   // 5000 requests
-        60000   // per minute
+    <span class="comment">// Tier 2: Per-user rate limit (if authenticated)</span>
+    <span class="keyword">if</span> (req.user) {
+      <span class="keyword">await</span> limiter.<span class="function">checkLimit</span>(
+        <span class="string">`user:${req.user.id}`</span>,
+        <span class="number">5000</span>,   <span class="comment">// 5000 requests</span>
+        <span class="number">60000</span>   <span class="comment">// per minute</span>
       );
     }
     
-    // Tier 3: Per-endpoint rate limit
-    await limiter.checkLimit(
-      `endpoint:${req.path}`,
-      10000,  // 10000 requests
-      60000   // per minute
+    <span class="comment">// Tier 3: Per-endpoint rate limit</span>
+    <span class="keyword">await</span> limiter.<span class="function">checkLimit</span>(
+      <span class="string">`endpoint:${req.path}`</span>,
+      <span class="number">10000</span>,  <span class="comment">// 10000 requests</span>
+      <span class="number">60000</span>   <span class="comment">// per minute</span>
     );
     
-    next();
-  } catch (error) {
-    if (error instanceof RateLimitError) {
-      res.set({
-        'X-RateLimit-Limit': error.limit,
-        'X-RateLimit-Remaining': error.remaining,
-        'X-RateLimit-Reset': error.resetAt.toISOString()
+    <span class="function">next</span>();
+  } <span class="keyword">catch</span> (error) {
+    <span class="keyword">if</span> (error <span class="keyword">instanceof</span> <span class="class-name">RateLimitError</span>) {
+      res.<span class="function">set</span>({
+        <span class="string">'X-RateLimit-Limit'</span>: error.limit,
+        <span class="string">'X-RateLimit-Remaining'</span>: error.remaining,
+        <span class="string">'X-RateLimit-Reset'</span>: error.resetAt.<span class="function">toISOString</span>()
       });
-      return res.status(429).json({
-        error: 'Too many requests',
+      <span class="keyword">return</span> res.<span class="function">status</span>(<span class="number">429</span>).<span class="function">json</span>({
+        error: <span class="string">'Too many requests'</span>,
         retryAfter: error.resetAt
       });
     }
-    next(error);
+    <span class="function">next</span>(error);
   }
 });</pre>
           </div>

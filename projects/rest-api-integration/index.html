@@ -227,37 +227,37 @@
                     <h3>Code Example - Rate Limiter Implementation</h3>
                     <div class="code-preview">
                         <pre>
-// Token Bucket Rate Limiter with Redis
-class RateLimiter {
-  constructor(vendor, maxRequests, windowMs) {
-    this.vendor = vendor;
-    this.maxRequests = maxRequests;
-    this.windowMs = windowMs;
+<span class="comment">// Token Bucket Rate Limiter with Redis</span>
+<span class="keyword">class</span> <span class="class-name">RateLimiter</span> {
+  <span class="function">constructor</span>(vendor, maxRequests, windowMs) {
+    <span class="keyword">this</span>.<span class="property">vendor</span> <span class="operator">=</span> vendor;
+    <span class="keyword">this</span>.<span class="property">maxRequests</span> <span class="operator">=</span> maxRequests;
+    <span class="keyword">this</span>.<span class="property">windowMs</span> <span class="operator">=</span> windowMs;
   }
 
-  async checkLimit(userId) {
-    const key = `ratelimit:${this.vendor}:${userId}`;
-    const current = await redis.incr(key);
+  <span class="keyword">async</span> <span class="function">checkLimit</span>(userId) {
+    <span class="keyword">const</span> key <span class="operator">=</span> <span class="string">`ratelimit:${this.vendor}:${userId}`</span>;
+    <span class="keyword">const</span> current <span class="operator">=</span> <span class="keyword">await</span> redis.<span class="function">incr</span>(key);
     
-    if (current === 1) {
-      await redis.pexpire(key, this.windowMs);
+    <span class="keyword">if</span> (current <span class="operator">===</span> <span class="number">1</span>) {
+      <span class="keyword">await</span> redis.<span class="function">pexpire</span>(key, <span class="keyword">this</span>.<span class="property">windowMs</span>);
     }
     
-    if (current > this.maxRequests) {
-      const ttl = await redis.pttl(key);
-      throw new RateLimitError(`Rate limit exceeded. Retry after ${ttl}ms`);
+    <span class="keyword">if</span> (current <span class="operator">&gt;</span> <span class="keyword">this</span>.<span class="property">maxRequests</span>) {
+      <span class="keyword">const</span> ttl <span class="operator">=</span> <span class="keyword">await</span> redis.<span class="function">pttl</span>(key);
+      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="class-name">RateLimitError</span>(<span class="string">`Rate limit exceeded. Retry after ${ttl}ms`</span>);
     }
     
-    return {
-      remaining: this.maxRequests - current,
-      resetAt: Date.now() + this.windowMs
+    <span class="keyword">return</span> {
+      remaining: <span class="keyword">this</span>.<span class="property">maxRequests</span> <span class="operator">-</span> current,
+      resetAt: <span class="class-name">Date</span>.<span class="function">now</span>() <span class="operator">+</span> <span class="keyword">this</span>.<span class="property">windowMs</span>
     };
   }
 }
 
-// Usage
-const stripeLimiter = new RateLimiter('stripe', 100, 60000);
-await stripeLimiter.checkLimit(userId);</pre>
+<span class="comment">// Usage</span>
+<span class="keyword">const</span> stripeLimiter <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">RateLimiter</span>(<span class="string">'stripe'</span>, <span class="number">100</span>, <span class="number">60000</span>);
+<span class="keyword">await</span> stripeLimiter.<span class="function">checkLimit</span>(userId);</pre>
                     </div>
 
                     <h3>Request Flow</h3>

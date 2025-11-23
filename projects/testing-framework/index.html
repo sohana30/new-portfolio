@@ -151,21 +151,21 @@
                     <h3>Code Example - Data Validation</h3>
                     <div class="code-preview">
                         <pre>
-def test_data_quality(self):
-    """Validate data completeness and integrity"""
+<span class="keyword">def</span> <span class="function">test_data_quality</span>(<span class="keyword">self</span>):
+    <span class="string">"""Validate data completeness and integrity"""</span>
     
-    # Load processed data
-    df = pd.read_csv('data/processed/sales.csv')
+    <span class="comment"># Load processed data</span>
+    df <span class="operator">=</span> pd.<span class="function">read_csv</span>(<span class="string">'data/processed/sales.csv'</span>)
     
-    # Check for nulls in critical columns
-    assert df['transaction_id'].notna().all(), "Null transaction IDs found"
+    <span class="comment"># Check for nulls in critical columns</span>
+    <span class="keyword">assert</span> df[<span class="string">'transaction_id'</span>].<span class="function">notna</span>().<span class="function">all</span>(), <span class="string">"Null transaction IDs found"</span>
     
-    # Validate business logic
-    assert (df['amount'] > 0).all(), "Negative transaction amounts detected"
+    <span class="comment"># Validate business logic</span>
+    <span class="keyword">assert</span> (df[<span class="string">'amount'</span>] <span class="operator">&gt;</span> <span class="number">0</span>).<span class="function">all</span>(), <span class="string">"Negative transaction amounts detected"</span>
     
-    # Verify row counts match source
-    source_count = get_source_count()
-    assert len(df) == source_count, f"Row count mismatch: {len(df)} vs {source_count}"</pre>
+    <span class="comment"># Verify row counts match source</span>
+    source_count <span class="operator">=</span> <span class="function">get_source_count</span>()
+    <span class="keyword">assert</span> <span class="function">len</span>(df) <span class="operator">==</span> source_count, <span class="string">f"Row count mismatch: {len(df)} vs {source_count}"</span></pre>
                     </div>
                 </div>
             </div>

@@ -148,21 +148,21 @@
                     <h3>Code Example - Optimized Aggregation</h3>
                     <div class="code-preview">
                         <pre>
-// MongoDB Aggregation Pipeline
-const revenueTrend = await Metric.aggregate([
+<span class="comment">// MongoDB Aggregation Pipeline</span>
+<span class="keyword">const</span> revenueTrend <span class="operator">=</span> <span class="keyword">await</span> <span class="class-name">Metric</span>.<span class="function">aggregate</span>([
   {
     $match: { 
-      timestamp: { $gte: new Date(Date.now() - 24*60*60*1000) } 
+      timestamp: { $gte: <span class="keyword">new</span> <span class="class-name">Date</span>(<span class="class-name">Date</span>.<span class="function">now</span>() <span class="operator">-</span> <span class="number">24</span><span class="operator">*</span><span class="number">60</span><span class="operator">*</span><span class="number">60</span><span class="operator">*</span><span class="number">1000</span>) } 
     }
   },
   {
     $group: {
-      _id: { $hour: "$timestamp" },
-      revenue: { $sum: "$amount" },
-      transactions: { $sum: 1 }
+      _id: { $hour: <span class="string">"$timestamp"</span> },
+      revenue: { $sum: <span class="string">"$amount"</span> },
+      transactions: { $sum: <span class="number">1</span> }
     }
   },
-  { $sort: { "_id": 1 } }
+  { $sort: { <span class="string">"_id"</span>: <span class="number">1</span> } }
 ]);</pre>
                     </div>
                 </div>

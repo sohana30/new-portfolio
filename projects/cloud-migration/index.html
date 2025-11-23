@@ -154,19 +154,19 @@
                     <h3>Code Example - Docker Optimization</h3>
                     <div class="code-preview">
                         <pre>
-# Multi-stage build for reduced image size
-FROM python:3.9-slim as builder
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --user -r requirements.txt
+<span class="comment"># Multi-stage build for reduced image size</span>
+<span class="keyword">FROM</span> <span class="string">python:3.9-slim</span> <span class="keyword">as</span> <span class="class-name">builder</span>
+<span class="keyword">WORKDIR</span> <span class="string">/app</span>
+<span class="keyword">COPY</span> <span class="string">requirements.txt</span> <span class="string">.</span>
+<span class="keyword">RUN</span> <span class="function">pip</span> install --user -r requirements.txt
 
-FROM python:3.9-slim
-WORKDIR /app
-# Copy only necessary artifacts
-COPY --from=builder /root/.local /root/.local
-COPY . .
-ENV PATH=/root/.local/bin:$PATH
-CMD ["python", "app.py"]</pre>
+<span class="keyword">FROM</span> <span class="string">python:3.9-slim</span>
+<span class="keyword">WORKDIR</span> <span class="string">/app</span>
+<span class="comment"># Copy only necessary artifacts</span>
+<span class="keyword">COPY</span> --from=<span class="class-name">builder</span> <span class="string">/root/.local</span> <span class="string">/root/.local</span>
+<span class="keyword">COPY</span> <span class="string">.</span> <span class="string">.</span>
+<span class="keyword">ENV</span> <span class="property">PATH</span>=<span class="string">/root/.local/bin:$PATH</span>
+<span class="keyword">CMD</span> [<span class="string">"python"</span>, <span class="string">"app.py"</span>]</pre>
                     </div>
                 </div>
             </div>

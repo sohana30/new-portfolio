@@ -227,43 +227,43 @@
                     <h3>Code Example - DataLoader Implementation</h3>
                     <div class="code-preview">
                         <pre>
-// DataLoader for batching user queries
-import DataLoader from 'dataloader';
+<span class="comment">// DataLoader for batching user queries</span>
+<span class="keyword">import</span> <span class="class-name">DataLoader</span> <span class="keyword">from</span> <span class="string">'dataloader'</span>;
 
-interface Context {
+<span class="keyword">interface</span> <span class="class-name">Context</span> {
   loaders: {
-    userLoader: DataLoader<string, User>;
+    userLoader: <span class="class-name">DataLoader</span>&lt;<span class="class-name">string</span>, <span class="class-name">User</span>&gt;;
   };
 }
 
-// Batch function that receives array of IDs
-const batchUsers = async (userIds: readonly string[]): Promise<User[]> => {
-  const users = await db.users.findMany({
-    where: { id: { in: [...userIds] } }
+<span class="comment">// Batch function that receives array of IDs</span>
+<span class="keyword">const</span> batchUsers <span class="operator">=</span> <span class="keyword">async</span> (userIds: <span class="keyword">readonly</span> <span class="class-name">string</span>[]): <span class="class-name">Promise</span>&lt;<span class="class-name">User</span>[]&gt; <span class="operator">=&gt;</span> {
+  <span class="keyword">const</span> users <span class="operator">=</span> <span class="keyword">await</span> db.<span class="property">users</span>.<span class="function">findMany</span>({
+    where: { id: { <span class="keyword">in</span>: [...userIds] } }
   });
   
-  // Return users in same order as requested IDs
-  const userMap = new Map(users.map(u => [u.id, u]));
-  return userIds.map(id => userMap.get(id) || new Error(`User ${id} not found`));
+  <span class="comment">// Return users in same order as requested IDs</span>
+  <span class="keyword">const</span> userMap <span class="operator">=</span> <span class="keyword">new</span> <span class="class-name">Map</span>(users.<span class="function">map</span>(u <span class="operator">=&gt;</span> [u.id, u]));
+  <span class="keyword">return</span> userIds.<span class="function">map</span>(id <span class="operator">=&gt;</span> userMap.<span class="function">get</span>(id) <span class="operator">||</span> <span class="keyword">new</span> <span class="class-name">Error</span>(<span class="string">`User ${id} not found`</span>));
 };
 
-// Create loader with batching and caching
-export const createUserLoader = () => 
-  new DataLoader(batchUsers, {
-    cache: true,
-    maxBatchSize: 100
+<span class="comment">// Create loader with batching and caching</span>
+<span class="keyword">export</span> <span class="keyword">const</span> <span class="function">createUserLoader</span> <span class="operator">=</span> () <span class="operator">=&gt;</span> 
+  <span class="keyword">new</span> <span class="class-name">DataLoader</span>(batchUsers, {
+    cache: <span class="keyword">true</span>,
+    maxBatchSize: <span class="number">100</span>
   });
 
-// Resolver using DataLoader
-const resolvers = {
+<span class="comment">// Resolver using DataLoader</span>
+<span class="keyword">const</span> resolvers <span class="operator">=</span> {
   Query: {
-    user: (_, { id }, context: Context) => 
-      context.loaders.userLoader.load(id)
+    user: (_, { id }, context: <span class="class-name">Context</span>) <span class="operator">=&gt;</span> 
+      context.loaders.userLoader.<span class="function">load</span>(id)
   },
   Order: {
-    // Automatically batched - no N+1!
-    customer: (order, _, context: Context) => 
-      context.loaders.userLoader.load(order.customerId)
+    <span class="comment">// Automatically batched - no N+1!</span>
+    customer: (order, _, context: <span class="class-name">Context</span>) <span class="operator">=&gt;</span> 
+      context.loaders.userLoader.<span class="function">load</span>(order.customerId)
   }
 };</pre>
                     </div>
@@ -271,25 +271,25 @@ const resolvers = {
                     <h3>Schema Federation Example</h3>
                     <div class="code-preview">
                         <pre>
-# User Service Schema
-type User @key(fields: "id") {
-  id: ID!
-  email: String!
-  name: String!
-  # Extended by Order Service
+<span class="comment"># User Service Schema</span>
+<span class="keyword">type</span> <span class="class-name">User</span> <span class="function">@key</span>(fields: <span class="string">"id"</span>) {
+  id: <span class="class-name">ID</span>!
+  email: <span class="class-name">String</span>!
+  name: <span class="class-name">String</span>!
+  <span class="comment"># Extended by Order Service</span>
 }
 
-# Order Service Schema
-extend type User @key(fields: "id") {
-  id: ID! @external
-  orders: [Order!]!
+<span class="comment"># Order Service Schema</span>
+<span class="keyword">extend</span> <span class="keyword">type</span> <span class="class-name">User</span> <span class="function">@key</span>(fields: <span class="string">"id"</span>) {
+  id: <span class="class-name">ID</span>! <span class="function">@external</span>
+  orders: [<span class="class-name">Order</span>!]!
 }
 
-type Order @key(fields: "id") {
-  id: ID!
-  customer: User!
-  items: [OrderItem!]!
-  total: Float!
+<span class="keyword">type</span> <span class="class-name">Order</span> <span class="function">@key</span>(fields: <span class="string">"id"</span>) {
+  id: <span class="class-name">ID</span>!
+  customer: <span class="class-name">User</span>!
+  items: [<span class="class-name">OrderItem</span>!]!
+  total: <span class="class-name">Float</span>!
 }</pre>
                     </div>
 

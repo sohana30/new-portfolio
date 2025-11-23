@@ -1726,7 +1726,6 @@ footer {
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
 /* Shimmer Effect */
@@ -2118,7 +2117,6 @@ footer {
     overflow: hidden;
     display: flex;
     gap: 16px;
-    cursor: pointer;
 }
 
 /* Shimmer Effect */

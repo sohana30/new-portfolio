@@ -1,0 +1,33 @@
+{
+    "name": "api-security-gateway",
+    "version": "1.0.0",
+    "description": "API Security Gateway with OAuth2, JWT, and rate limiting",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js",
+        "generate-keys": "node scripts/generateKeys.js"
+    },
+    "keywords": [
+        "oauth2",
+        "jwt",
+        "security",
+        "api-gateway"
+    ],
+    "author": "Sohana",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.2",
+        "bcrypt": "^5.1.1",
+        "redis": "^4.6.0",
+        "dotenv": "^16.3.1",
+        "helmet": "^7.1.0",
+        "rate-limiter-flexible": "^3.0.0",
+        "joi": "^17.11.0",
+        "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphQL API Gateway - Project Showcase</title>
+    <meta name="description"
+        content="Unified GraphQL gateway aggregating multiple microservices with schema stitching and federation.">
+    <link rel="stylesheet" href="../../styles.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="project-showcase">
+        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>GraphQL API Gateway</h1>
+            <p class="subtitle">Unified data layer for microservices with Apollo Federation and schema stitching</p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> API Architect / Backend Developer
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> 5 Months
+                </div>
+                <div class="meta-item">
+                    <strong>Status:</strong> Production
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-badge">GraphQL</span>
+                <span class="tech-badge">Apollo Server</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Redis</span>
+                <span class="tech-badge">DataLoader</span>
+                <span class="tech-badge">Kubernetes</span>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                <a href="https://github.com/sohana30/data-engineering-portfolio/tree/main/projects/graphql-gateway"
+                    class="btn-secondary" target="_blank">Browse Code</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <nav class="project-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Key Features</a></li>
+                        <li><a href="#services">Integrated Services</a></li>
+                        <li><a href="#challenges">Challenges & Solutions</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="project-main">
+                <div id="overview" class="content-section">
+                    <h2>🚀 Project Overview</h2>
+                    <p>Designed and implemented a unified GraphQL gateway that aggregates 8 microservices into a single,
+                        cohesive API. Using Apollo Federation, the gateway provides a type-safe, performant data layer
+                        that eliminates over-fetching and under-fetching issues. The system handles complex queries with
+                        N+1 problem resolution through DataLoader batching, reducing database queries by 80%.</p>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-value">8</span>
+                            <span class="metric-label">Microservices</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">80%</span>
+                            <span class="metric-label">Fewer DB Queries</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">5K+</span>
+                            <span class="metric-label">Queries/Min</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">&lt;30ms</span>
+                            <span class="metric-label">P95 Latency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="features" class="content-section">
+                    <h2>🎯 Key Features</h2>
+                    <ul>
+                        <li><strong>Apollo Federation:</strong> Distributed schema composition across multiple subgraphs
+                        </li>
+                        <li><strong>Type Safety:</strong> Full TypeScript implementation with auto-generated types from
+                            schema</li>
+                        <li><strong>DataLoader Batching:</strong> Automatic request batching and caching to solve N+1
+                            queries</li>
+                        <li><strong>Query Complexity Analysis:</strong> Prevents expensive queries with configurable
+                            complexity limits</li>
+                        <li><strong>Persisted Queries:</strong> APQ (Automatic Persisted Queries) for reduced bandwidth
+                        </li>
+                        <li><strong>Real-time Subscriptions:</strong> WebSocket-based subscriptions for live data
+                            updates</li>
+                        <li><strong>Field-level Authorization:</strong> Granular permissions using custom directives
+                        </li>
+                        <li><strong>GraphQL Playground:</strong> Interactive API explorer with documentation</li>
+                    </ul>
+                </div>
+
+                <div id="services" class="content-section">
+                    <h2>🔗 Integrated Services</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>User Service</h3>
+                            <p><strong>Authentication & Profile Management</strong></p>
+                            <ul>
+                                <li>User registration and authentication</li>
+                                <li>Profile CRUD operations</li>
+                                <li>Role-based access control</li>
+                                <li>Session management</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Product Catalog</h3>
+                            <p><strong>Inventory & Product Data</strong></p>
+                            <ul>
+                                <li>Product search and filtering</li>
+                                <li>Category hierarchies</li>
+                                <li>Real-time inventory updates</li>
+                                <li>Price and promotion management</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Order Management</h3>
+                            <p><strong>E-commerce Transactions</strong></p>
+                            <ul>
+                                <li>Cart and checkout operations</li>
+                                <li>Order processing pipeline</li>
+                                <li>Payment integration</li>
+                                <li>Order history and tracking</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Analytics Service</h3>
+                            <p><strong>Business Intelligence</strong></p>
+                            <ul>
+                                <li>User behavior tracking</li>
+                                <li>Sales metrics aggregation</li>
+                                <li>Custom report generation</li>
+                                <li>Real-time dashboards</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="challenges" class="content-section">
+                    <h2>⚡ Challenges & Solutions</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>N+1 Query Problem</h3>
+                            <p>Nested GraphQL queries causing exponential database calls, leading to severe performance
+                                degradation.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Implemented DataLoader for automatic request batching and caching. Created custom
+                                    loaders for each entity type, reducing database queries by 80% and improving
+                                    response time from 2s to 200ms.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Schema Coordination</h3>
+                            <p>Managing schema changes across 8 independent microservices without breaking clients.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Adopted Apollo Federation with schema composition validation in CI/CD. Implemented
+                                    schema registry for version control and automated compatibility checks before
+                                    deployment.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Query Complexity</h3>
+                            <p>Malicious or poorly written queries consuming excessive server resources.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Built query complexity analyzer that assigns cost to each field. Implemented depth
+                                    limiting and configurable complexity budgets per user tier, preventing DoS attacks.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Error Handling</h3>
+                            <p>Inconsistent error formats from different microservices making debugging difficult.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Created unified error handling middleware that normalizes errors into GraphQL error
+                                    format. Added error codes, stack traces in dev mode, and correlation IDs for
+                                    distributed tracing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="architecture" class="content-section">
+                    <h2>🏗️ Architecture</h2>
+                    <h3>Federation Architecture</h3>
+                    <ul>
+                        <li><strong>Gateway Layer:</strong> Apollo Gateway for schema composition and query planning
+                        </li>
+                        <li><strong>Subgraph Services:</strong> 8 federated services with domain-specific schemas</li>
+                        <li><strong>Data Layer:</strong> DataLoader for batching and caching</li>
+                        <li><strong>Cache Layer:</strong> Redis for query result caching and session storage</li>
+                        <li><strong>Monitoring:</strong> Apollo Studio for performance tracking and error monitoring
+                        </li>
+                    </ul>
+
+                    <h3>Code Example - DataLoader Implementation</h3>
+                    <div class="code-preview">
+                        <pre>
+// DataLoader for batching user queries
+import DataLoader from 'dataloader';
+
+interface Context {
+  loaders: {
+    userLoader: DataLoader<string, User>;
+  };
+}
+
+// Batch function that receives array of IDs
+const batchUsers = async (userIds: readonly string[]): Promise<User[]> => {
+  const users = await db.users.findMany({
+    where: { id: { in: [...userIds] } }
+  });
+  
+  // Return users in same order as requested IDs
+  const userMap = new Map(users.map(u => [u.id, u]));
+  return userIds.map(id => userMap.get(id) || new Error(`User ${id} not found`));
+};
+
+// Create loader with batching and caching
+export const createUserLoader = () => 
+  new DataLoader(batchUsers, {
+    cache: true,
+    maxBatchSize: 100
+  });
+
+// Resolver using DataLoader
+const resolvers = {
+  Query: {
+    user: (_, { id }, context: Context) => 
+      context.loaders.userLoader.load(id)
+  },
+  Order: {
+    // Automatically batched - no N+1!
+    customer: (order, _, context: Context) => 
+      context.loaders.userLoader.load(order.customerId)
+  }
+};</pre>
+                    </div>
+
+                    <h3>Schema Federation Example</h3>
+                    <div class="code-preview">
+                        <pre>
+# User Service Schema
+type User @key(fields: "id") {
+  id: ID!
+  email: String!
+  name: String!
+  # Extended by Order Service
+}
+
+# Order Service Schema
+extend type User @key(fields: "id") {
+  id: ID! @external
+  orders: [Order!]!
+}
+
+type Order @key(fields: "id") {
+  id: ID!
+  customer: User!
+  items: [OrderItem!]!
+  total: Float!
+}</pre>
+                    </div>
+
+                    <h3>Performance Optimizations</h3>
+                    <ul>
+                        <li><strong>Query Batching:</strong> DataLoader reduces database calls by 80%</li>
+                        <li><strong>Response Caching:</strong> Redis caching with TTL-based invalidation</li>
+                        <li><strong>Persisted Queries:</strong> APQ reduces payload size by 90%</li>
+                        <li><strong>Connection Pooling:</strong> Optimized database connection management</li>
+                        <li><strong>Lazy Loading:</strong> Defer expensive fields until explicitly requested</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>

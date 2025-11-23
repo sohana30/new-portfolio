@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices API Orchestration - Project Showcase</title>
+    <meta name="description"
+        content="Event-driven microservices architecture with API orchestration, message queues, and distributed tracing.">
+    <link rel="stylesheet" href="../../styles.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="project-showcase">
+        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>Microservices API Orchestration</h1>
+            <p class="subtitle">Event-driven architecture with saga patterns and distributed transaction management</p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Solutions Architect / Backend Developer
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> 8 Months
+                </div>
+                <div class="meta-item">
+                    <strong>Status:</strong> Production
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">RabbitMQ</span>
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Kubernetes</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Redis</span>
+                <span class="tech-badge">Jaeger</span>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                <a href="https://github.com/sohana30/data-engineering-portfolio/tree/main/projects/microservices-orchestration"
+                    class="btn-secondary" target="_blank">Browse Code</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <nav class="project-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Key Features</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#patterns">Design Patterns</a></li>
+                        <li><a href="#challenges">Challenges & Solutions</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="project-main">
+                <div id="overview" class="content-section">
+                    <h2>🎯 Project Overview</h2>
+                    <p>Designed and implemented a distributed microservices architecture handling complex business
+                        workflows
+                        across 15+ independent services. The system uses event-driven communication with RabbitMQ and
+                        Kafka,
+                        implementing saga patterns for distributed transactions. Features comprehensive observability
+                        with
+                        distributed tracing, centralized logging, and real-time monitoring.</p>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-value">15+</span>
+                            <span class="metric-label">Microservices</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">500K+</span>
+                            <span class="metric-label">Events/Day</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">99.95%</span>
+                            <span class="metric-label">Success Rate</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">&lt;100ms</span>
+                            <span class="metric-label">P99 Latency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="features" class="content-section">
+                    <h2>🚀 Key Features</h2>
+                    <ul>
+                        <li><strong>Event-Driven Architecture:</strong> Asynchronous communication using RabbitMQ and
+                            Kafka message brokers</li>
+                        <li><strong>Saga Pattern Implementation:</strong> Choreography-based sagas for distributed
+                            transaction management</li>
+                        <li><strong>API Gateway:</strong> Single entry point with request routing, authentication, and
+                            rate limiting</li>
+                        <li><strong>Service Discovery:</strong> Automatic service registration and health checking with
+                            Consul</li>
+                        <li><strong>Distributed Tracing:</strong> End-to-end request tracing with Jaeger and
+                            OpenTelemetry</li>
+                        <li><strong>Circuit Breaker:</strong> Resilience patterns to prevent cascading failures</li>
+                        <li><strong>Event Sourcing:</strong> Complete audit trail with event store for critical
+                            workflows</li>
+                        <li><strong>CQRS Pattern:</strong> Separate read and write models for optimized performance</li>
+                    </ul>
+                </div>
+
+                <div id="architecture" class="content-section">
+                    <h2>🏗️ Architecture</h2>
+                    <h3>System Components</h3>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>API Gateway Layer</h3>
+                            <ul>
+                                <li>Request routing and load balancing</li>
+                                <li>JWT authentication and authorization</li>
+                                <li>Rate limiting and throttling</li>
+                                <li>Request/response transformation</li>
+                                <li>API versioning support</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Core Services</h3>
+                            <ul>
+                                <li>User Management Service</li>
+                                <li>Order Processing Service</li>
+                                <li>Inventory Management Service</li>
+                                <li>Payment Processing Service</li>
+                                <li>Notification Service</li>
+                                <li>Analytics Service</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Message Infrastructure</h3>
+                            <ul>
+                                <li>RabbitMQ for command messages</li>
+                                <li>Kafka for event streaming</li>
+                                <li>Dead letter queues for failed messages</li>
+                                <li>Message retry and idempotency</li>
+                                <li>Schema registry for message validation</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Observability Stack</h3>
+                            <ul>
+                                <li>Jaeger for distributed tracing</li>
+                                <li>Prometheus for metrics collection</li>
+                                <li>Grafana for visualization</li>
+                                <li>ELK stack for centralized logging</li>
+                                <li>PagerDuty for alerting</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Service Communication Flow</h3>
+                    <div class="code-preview">
+                        <pre>
+┌─────────────┐
+│   Client    │
+└──────┬──────┘
+       │ HTTP Request
+       ▼
+┌─────────────────┐
+│  API Gateway    │
+└────────┬────────┘
+         │
+    ┌────┴────┐
+    │         │
+    ▼         ▼
+┌────────┐ ┌────────┐
+│Service │ │Service │
+│   A    │ │   B    │
+└───┬────┘ └───┬────┘
+    │          │
+    └────┬─────┘
+         │ Publish Event
+         ▼
+    ┌──────────┐
+    │ RabbitMQ │
+    │  Kafka   │
+    └────┬─────┘
+         │ Subscribe
+    ┌────┴────┐
+    │         │
+    ▼         ▼
+┌────────┐ ┌────────┐
+│Service │ │Service │
+│   C    │ │   D    │
+└────────┘ └────────┘</pre>
+                    </div>
+                </div>
+
+                <div id="patterns" class="content-section">
+                    <h2>🎨 Design Patterns</h2>
+
+                    <h3>1. Saga Pattern - Order Processing</h3>
+                    <div class="code-preview">
+                        <pre>
+// Choreography-based Saga for Order Creation
+class OrderSaga {
+  async createOrder(orderData) {
+    const orderId = await this.orderService.create(orderData);
+    
+    // Publish event to trigger next steps
+    await this.eventBus.publish('OrderCreated', {
+      orderId,
+      customerId: orderData.customerId,
+      items: orderData.items,
+      total: orderData.total
+    });
+    
+    return orderId;
+  }
+  
+  // Compensating transaction
+  async handlePaymentFailed(event) {
+    const { orderId } = event;
+    
+    // Rollback inventory reservation
+    await this.eventBus.publish('CancelInventoryReservation', {
+      orderId
+    });
+    
+    // Update order status
+    await this.orderService.updateStatus(orderId, 'FAILED');
+    
+    // Notify customer
+    await this.eventBus.publish('OrderFailed', {
+      orderId,
+      reason: 'Payment processing failed'
+    });
+  }
+}
+
+// Event Handlers
+eventBus.subscribe('OrderCreated', async (event) => {
+  // Reserve inventory
+  await inventoryService.reserve(event.items);
+  await eventBus.publish('InventoryReserved', event);
+});
+
+eventBus.subscribe('InventoryReserved', async (event) => {
+  // Process payment
+  const result = await paymentService.charge(event.total);
+  
+  if (result.success) {
+    await eventBus.publish('PaymentCompleted', event);
+  } else {
+    await eventBus.publish('PaymentFailed', event);
+  }
+});</pre>
+                    </div>
+
+                    <h3>2. Circuit Breaker Pattern</h3>
+                    <div class="code-preview">
+                        <pre>
+// Circuit Breaker for external API calls
+class CircuitBreaker {
+  constructor(threshold = 5, timeout = 60000) {
+    this.failureCount = 0;
+    this.threshold = threshold;
+    this.timeout = timeout;
+    this.state = 'CLOSED'; // CLOSED, OPEN, HALF_OPEN
+    this.nextAttempt = Date.now();
+  }
+  
+  async execute(fn) {
+    if (this.state === 'OPEN') {
+      if (Date.now() < this.nextAttempt) {
+        throw new Error('Circuit breaker is OPEN');
+      }
+      this.state = 'HALF_OPEN';
+    }
+    
+    try {
+      const result = await fn();
+      this.onSuccess();
+      return result;
+    } catch (error) {
+      this.onFailure();
+      throw error;
+    }
+  }
+  
+  onSuccess() {
+    this.failureCount = 0;
+    this.state = 'CLOSED';
+  }
+  
+  onFailure() {
+    this.failureCount++;
+    if (this.failureCount >= this.threshold) {
+      this.state = 'OPEN';
+      this.nextAttempt = Date.now() + this.timeout;
+    }
+  }
+}
+
+// Usage
+const paymentBreaker = new CircuitBreaker(5, 60000);
+const result = await paymentBreaker.execute(() => 
+  paymentAPI.processCharge(amount)
+);</pre>
+                    </div>
+
+                    <h3>3. Event Sourcing</h3>
+                    <div class="code-preview">
+                        <pre>
+// Event Store for Order Aggregate
+class OrderEventStore {
+  async appendEvent(orderId, event) {
+    await db.events.insert({
+      aggregateId: orderId,
+      aggregateType: 'Order',
+      eventType: event.type,
+      eventData: event.data,
+      timestamp: new Date(),
+      version: await this.getNextVersion(orderId)
+    });
+    
+    // Publish to event bus
+    await eventBus.publish(event.type, {
+      orderId,
+      ...event.data
+    });
+  }
+  
+  async rehydrateAggregate(orderId) {
+    const events = await db.events.find({
+      aggregateId: orderId,
+      aggregateType: 'Order'
+    }).sort({ version: 1 });
+    
+    // Rebuild state from events
+    let order = new Order();
+    for (const event of events) {
+      order = order.apply(event);
+    }
+    return order;
+  }
+}</pre>
+                    </div>
+                </div>
+
+                <div id="challenges" class="content-section">
+                    <h2>⚡ Challenges & Solutions</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>Distributed Transactions</h3>
+                            <p>Maintaining data consistency across multiple services without traditional ACID
+                                transactions.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Implemented choreography-based saga pattern with compensating transactions. Each
+                                    service publishes domain events, and other services react accordingly. Added
+                                    idempotency keys to handle duplicate messages and ensure exactly-once processing
+                                    semantics.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Service Dependencies</h3>
+                            <p>Cascading failures when dependent services become unavailable or slow.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Implemented circuit breaker pattern with fallback mechanisms. Added bulkhead
+                                    isolation to prevent resource exhaustion. Used async messaging to decouple services,
+                                    reducing synchronous dependencies by 70%.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Message Ordering</h3>
+                            <p>Ensuring correct processing order for related events in distributed system.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Used Kafka partitioning with aggregate IDs as partition keys to guarantee ordering
+                                    within same aggregate. Implemented optimistic locking with version numbers to detect
+                                    and handle out-of-order updates.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Debugging Distributed Flows</h3>
+                            <p>Tracing requests across 15+ services with complex async workflows.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Integrated OpenTelemetry with Jaeger for distributed tracing. Added correlation IDs
+                                    to all messages and logs. Built custom Grafana dashboards showing end-to-end request
+                                    flows with latency breakdowns per service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📊 Performance Metrics</h2>
+                    <ul>
+                        <li><strong>Throughput:</strong> 500K+ events processed daily</li>
+                        <li><strong>Latency:</strong> P99 latency under 100ms for sync APIs</li>
+                        <li><strong>Reliability:</strong> 99.95% success rate with automatic retries</li>
+                        <li><strong>Scalability:</strong> Auto-scaling handles 10x traffic spikes</li>
+                        <li><strong>Recovery:</strong> Average recovery time under 30 seconds</li>
+                    </ul>
+
+                    <h3>Deployment Architecture</h3>
+                    <ul>
+                        <li>Kubernetes for container orchestration</li>
+                        <li>Horizontal pod autoscaling based on CPU/memory</li>
+                        <li>Blue-green deployments for zero-downtime updates</li>
+                        <li>Canary releases for gradual rollouts</li>
+                        <li>Automated rollback on error threshold breach</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>

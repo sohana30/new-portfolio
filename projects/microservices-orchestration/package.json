@@ -1,0 +1,30 @@
+{
+    "name": "microservices-orchestration",
+    "version": "1.0.0",
+    "description": "Event-driven microservices with RabbitMQ and saga patterns",
+    "scripts": {
+        "start:order": "node services/order-service/index.js",
+        "start:payment": "node services/payment-service/index.js",
+        "start:inventory": "node services/inventory-service/index.js",
+        "start:all": "concurrently \"npm:start:order\" \"npm:start:payment\" \"npm:start:inventory\""
+    },
+    "keywords": [
+        "microservices",
+        "rabbitmq",
+        "saga",
+        "event-driven"
+    ],
+    "author": "Sohana",
+    "license": "MIT",
+    "dependencies": {
+        "amqplib": "^0.10.3",
+        "express": "^4.18.2",
+        "dotenv": "^16.3.1",
+        "winston": "^3.11.0",
+        "uuid": "^9.0.1"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "nodemon": "^3.0.1"
+    }
+}

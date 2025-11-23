@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST API Integration Hub - Project Showcase</title>
+    <meta name="description"
+        content="Multi-vendor API integration platform with rate limiting, caching, and error handling.">
+    <link rel="stylesheet" href="../../styles.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="project-showcase">
+        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-header">
+            <h1>REST API Integration Hub</h1>
+            <p class="subtitle">Enterprise-grade API integration platform with intelligent routing and monitoring</p>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Role:</strong> Backend Developer / Integration Specialist
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> 6 Months
+                </div>
+                <div class="meta-item">
+                    <strong>Status:</strong> Production
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express.js</span>
+                <span class="tech-badge">REST APIs</span>
+                <span class="tech-badge">Redis</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">AWS Lambda</span>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                <a href="https://github.com/sohana30/data-engineering-portfolio/tree/main/projects/rest-api-integration"
+                    class="btn-secondary" target="_blank">Browse Code</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <aside class="project-sidebar">
+                <nav class="project-nav">
+                    <h3>Contents</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Key Features</a></li>
+                        <li><a href="#integrations">API Integrations</a></li>
+                        <li><a href="#challenges">Challenges & Solutions</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="project-main">
+                <div id="overview" class="content-section">
+                    <h2>📡 Project Overview</h2>
+                    <p>Built a comprehensive API integration platform that connects multiple third-party services
+                        including
+                        payment processors, shipping providers, CRM systems, and analytics platforms. The system handles
+                        over 1 million API calls daily with 99.9% uptime, featuring intelligent rate limiting, automatic
+                        retry mechanisms, and comprehensive error handling.</p>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-value">1M+</span>
+                            <span class="metric-label">Daily API Calls</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Uptime</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">12</span>
+                            <span class="metric-label">API Integrations</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">50ms</span>
+                            <span class="metric-label">Avg Response Time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="features" class="content-section">
+                    <h2>🎯 Key Features</h2>
+                    <ul>
+                        <li><strong>Unified API Gateway:</strong> Single entry point for all external API communications
+                            with consistent error handling</li>
+                        <li><strong>Intelligent Rate Limiting:</strong> Per-vendor rate limiting with automatic backoff
+                            and queue management</li>
+                        <li><strong>Response Caching:</strong> Redis-based caching layer reducing redundant API calls by
+                            40%</li>
+                        <li><strong>Automatic Retries:</strong> Exponential backoff retry logic for transient failures
+                        </li>
+                        <li><strong>Request/Response Logging:</strong> Comprehensive audit trail for debugging and
+                            compliance</li>
+                        <li><strong>Health Monitoring:</strong> Real-time monitoring of API endpoint health and
+                            performance metrics</li>
+                        <li><strong>Webhook Management:</strong> Centralized webhook receiver with signature
+                            verification</li>
+                    </ul>
+                </div>
+
+                <div id="integrations" class="content-section">
+                    <h2>🔌 API Integrations</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>Payment Processing</h3>
+                            <p><strong>Stripe, PayPal, Square</strong></p>
+                            <ul>
+                                <li>Payment intent creation and confirmation</li>
+                                <li>Refund and dispute handling</li>
+                                <li>Webhook event processing</li>
+                                <li>PCI compliance implementation</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Shipping & Logistics</h3>
+                            <p><strong>FedEx, UPS, USPS APIs</strong></p>
+                            <ul>
+                                <li>Real-time rate calculation</li>
+                                <li>Label generation and tracking</li>
+                                <li>Address validation</li>
+                                <li>Delivery status updates</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>CRM & Marketing</h3>
+                            <p><strong>Salesforce, HubSpot, Mailchimp</strong></p>
+                            <ul>
+                                <li>Contact synchronization</li>
+                                <li>Lead scoring and routing</li>
+                                <li>Email campaign automation</li>
+                                <li>Analytics data aggregation</li>
+                            </ul>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Cloud Services</h3>
+                            <p><strong>AWS S3, Twilio, SendGrid</strong></p>
+                            <ul>
+                                <li>File storage and CDN delivery</li>
+                                <li>SMS and voice notifications</li>
+                                <li>Transactional email delivery</li>
+                                <li>Multi-channel communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="challenges" class="content-section">
+                    <h2>⚡ Challenges & Solutions</h2>
+                    <div class="challenges-grid">
+                        <div class="challenge-card">
+                            <h3>Rate Limit Management</h3>
+                            <p>Different vendors have varying rate limits and quota systems, causing throttling errors
+                                during peak traffic.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Implemented a token bucket algorithm with Redis to track per-vendor quotas. Added
+                                    intelligent queuing system that automatically delays requests when approaching
+                                    limits, reducing throttling errors by 95%.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>API Versioning</h3>
+                            <p>Managing multiple API versions across different vendors while maintaining backward
+                                compatibility.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Created adapter pattern-based architecture with version-specific handlers.
+                                    Implemented automated migration scripts and comprehensive testing suite to ensure
+                                    smooth transitions between API versions.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Error Handling</h3>
+                            <p>Inconsistent error formats and status codes across different API providers.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Built a unified error normalization layer that translates vendor-specific errors into
+                                    standardized format. Implemented circuit breaker pattern to prevent cascading
+                                    failures.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-card">
+                            <h3>Data Synchronization</h3>
+                            <p>Keeping data consistent across multiple systems with different update frequencies.</p>
+                            <div class="solution-block">
+                                <h4>Solution</h4>
+                                <p>Designed event-driven architecture using AWS SQS for asynchronous processing.
+                                    Implemented idempotency keys and conflict resolution strategies to handle duplicate
+                                    events.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="architecture" class="content-section">
+                    <h2>🏗️ Architecture</h2>
+                    <h3>System Components</h3>
+                    <ul>
+                        <li><strong>API Gateway:</strong> Express.js server handling routing and authentication</li>
+                        <li><strong>Service Layer:</strong> Vendor-specific adapters with standardized interfaces</li>
+                        <li><strong>Cache Layer:</strong> Redis for response caching and rate limit tracking</li>
+                        <li><strong>Queue System:</strong> AWS SQS for asynchronous job processing</li>
+                        <li><strong>Database:</strong> PostgreSQL for transaction logs and configuration</li>
+                        <li><strong>Monitoring:</strong> CloudWatch for metrics and alerting</li>
+                    </ul>
+
+                    <h3>Code Example - Rate Limiter Implementation</h3>
+                    <div class="code-preview">
+                        <pre>
+// Token Bucket Rate Limiter with Redis
+class RateLimiter {
+  constructor(vendor, maxRequests, windowMs) {
+    this.vendor = vendor;
+    this.maxRequests = maxRequests;
+    this.windowMs = windowMs;
+  }
+
+  async checkLimit(userId) {
+    const key = `ratelimit:${this.vendor}:${userId}`;
+    const current = await redis.incr(key);
+    
+    if (current === 1) {
+      await redis.pexpire(key, this.windowMs);
+    }
+    
+    if (current > this.maxRequests) {
+      const ttl = await redis.pttl(key);
+      throw new RateLimitError(`Rate limit exceeded. Retry after ${ttl}ms`);
+    }
+    
+    return {
+      remaining: this.maxRequests - current,
+      resetAt: Date.now() + this.windowMs
+    };
+  }
+}
+
+// Usage
+const stripeLimiter = new RateLimiter('stripe', 100, 60000);
+await stripeLimiter.checkLimit(userId);</pre>
+                    </div>
+
+                    <h3>Request Flow</h3>
+                    <ul>
+                        <li><strong>1. Authentication:</strong> Verify API key and user permissions</li>
+                        <li><strong>2. Rate Check:</strong> Validate against vendor-specific limits</li>
+                        <li><strong>3. Cache Lookup:</strong> Check Redis for cached responses</li>
+                        <li><strong>4. API Call:</strong> Execute request with retry logic</li>
+                        <li><strong>5. Response Processing:</strong> Normalize and cache response</li>
+                        <li><strong>6. Logging:</strong> Store request/response for audit trail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>

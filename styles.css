@@ -2000,52 +2000,53 @@ footer {
 }
 
 /* WES Certification Link */
+/* WES Certification Link */
 .wes-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     margin-top: 15px;
-    padding: 10px 18px;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    border-radius: 8px;
+    padding: 8px 24px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 50px;
     color: var(--accent);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .wes-link::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: 0;
+    width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
-    transition: left 0.5s ease;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    z-index: -1;
 }
 
 .wes-link:hover::before {
-    left: 100%;
+    width: 100%;
 }
 
 .wes-link:hover {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1));
-    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
-    color: #c4b5fd;
+    border-color: var(--accent);
 }
 
 .wes-link:active {
     transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
 }
 
 

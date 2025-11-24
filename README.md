@@ -9,7 +9,7 @@
 
 ## 👋 About Me
 
-I'm a **Data Engineer** with 5+ years of experience in software development, database optimization, and cloud analytics. Currently specializing in ETL pipelines and data transformation using **Snowflake** and **AWS**.
+I'm a **Analyst/Developer** with 5+ years of experience in software development, database optimization, and cloud analytics. Currently specializing in ETL pipelines and data transformation using **Snowflake** and **AWS**.
 
 **Current Role:** Data Contractor at Alloy.ai  
 **Focus Areas:** ETL Pipelines | Data Quality | Cloud Data Platforms | Testing Automation

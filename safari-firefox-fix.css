@@ -1,0 +1,80 @@
+/* Safari and Firefox Compatibility Fixes */
+
+/* Fix for hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Enable active states for touch devices */
+    .back-link:active,
+    .btn-primary:active,
+    .btn-secondary:active,
+    .metric-card:active,
+    .challenge-card:active,
+    .project-card:active,
+    .footer-nav a:active,
+    .footer-socials a:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+}
+
+/* Ensure backdrop-filter works in Safari */
+.project-header,
+.metric-card,
+.challenge-card,
+footer {
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Fix for background-clip in Safari */
+.project-header h1 {
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+/* Fix for transform and transition in Firefox */
+.metric-card,
+.challenge-card,
+.project-card {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Ensure smooth scrolling works in Safari */
+html {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for flexbox in older Safari versions */
+.project-layout,
+.metrics-grid,
+.challenges-grid {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+}
+
+/* Add active state for better touch feedback */
+.btn-primary:active,
+.btn-secondary:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 10px rgba(139, 92, 246, 0.2);
+}
+
+.metric-card:active,
+.challenge-card:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* Fix for gradient backgrounds in Firefox */
+.project-header {
+    background: -moz-linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+}

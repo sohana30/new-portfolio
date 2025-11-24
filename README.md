@@ -2,7 +2,7 @@
 
 > Professional portfolio showcasing data engineering projects, ETL pipelines, and cloud data solutions.
 
-[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge)](https://sohana30.github.io/data-engineering-portfolio/)
+[![Live Portfolio](https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge)](https://sohana30.github.io/new-portfolio/)
 [![GitHub](https://img.shields.io/badge/GitHub-sohana30-blue?style=for-the-badge&logo=github)](https://github.com/sohana30)
 
 ---
@@ -86,7 +86,7 @@ Migrated legacy MySQL databases to AWS cloud infrastructure.
 ## 📂 Repository Structure
 
 ```
-data-engineering-portfolio/
+new-portfolio/
 ├── index.html              # Main portfolio page
 ├── styles.css              # Portfolio styling
 ├── script.js               # Interactive features
@@ -108,7 +108,7 @@ data-engineering-portfolio/
 
 ## 🌐 Live Portfolio
 
-Visit my live portfolio: **[https://sohana30.github.io/data-engineering-portfolio/](https://sohana30.github.io/data-engineering-portfolio/)**
+Visit my live portfolio: **[https://sohana30.github.io/new-portfolio/](https://sohana30.github.io/new-portfolio/)**
 
 ---
 
@@ -118,10 +118,10 @@ To run this portfolio locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/sohana30/data-engineering-portfolio.git
+git clone https://github.com/sohana30/new-portfolio.git
 
 # Navigate to the directory
-cd data-engineering-portfolio
+cd new-portfolio
 
 # Open in browser
 open index.html
@@ -134,7 +134,7 @@ python -m http.server 8000
 
 ## 📫 Contact
 
-- **Portfolio:** [sohana30.github.io/data-engineering-portfolio](https://sohana30.github.io/data-engineering-portfolio/)
+- **Portfolio:** [sohana30.github.io/new-portfolio](https://sohana30.github.io/new-portfolio/)
 - **GitHub:** [@sohana30](https://github.com/sohana30)
 - **LinkedIn:** [Connect with me](https://www.linkedin.com/in/sohana-727553118/)
 - **Email:** sohanaakadiwala@gmail.com

@@ -56,6 +56,10 @@ button,
 textarea,
 select {
     font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    /* Reset iOS rounded corners */
 }
 
 /* Prevent overflow from long words */
@@ -962,6 +966,8 @@ h2 {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transform: translateZ(0);
     will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .project-card::before {
@@ -1327,6 +1333,7 @@ h2 {
     font-size: 0.9rem;
     display: none;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid;
 }
 
@@ -1726,6 +1733,8 @@ footer {
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* Shimmer Effect */
@@ -1876,6 +1885,8 @@ footer {
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .challenge-card::after {
@@ -3387,6 +3398,7 @@ footer {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     position: relative;
     overflow: hidden;
 }
@@ -3439,6 +3451,8 @@ footer {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
     transform: translateZ(0);
     will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .content-section:nth-child(1) {

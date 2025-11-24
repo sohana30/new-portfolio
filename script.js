@@ -209,9 +209,16 @@ frontend:
       features: [Hooks, Context API]
     - name: Next.js
       type: SSR/SSG framework
-  styling:
-    - TailwindCSS
-    - SCSS/SASS
+    - Vue.js
+    - Bootstrap
+    - jQuery
+  languages:
+    - HTML5
+    - CSS3 (Sass)
+    - JavaScript
+  tools:
+    - AJAX
+    - Figma (Web Designing)
 
 # Backend & API
 backend:

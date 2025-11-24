@@ -1,4 +1,4 @@
-# 📊 Data Engineering Portfolio
+# 📊 Analyst/Developer Portfolio
 
 > Professional portfolio showcasing data engineering projects, ETL pipelines, and cloud data solutions.
 

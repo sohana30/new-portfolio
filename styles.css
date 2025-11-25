@@ -2070,23 +2070,29 @@ footer::before {
         gap: 25px;
     }
 
+    .challenges-grid .challenge-card {
+        min-width: 0;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
     .challenge-card {
-        padding: 25px;
+        padding: 20px;
     }
 
     .challenge-card h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin-bottom: 12px;
     }
 
     .challenge-card p {
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.6;
     }
 
     .solution-block {
-        margin-top: 20px;
-        padding: 20px;
+        margin-top: 15px;
+        padding: 15px;
     }
 }
 

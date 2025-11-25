@@ -21,39 +21,42 @@
     <canvas id="bg-canvas"></canvas>
 
     <div class="project-showcase">
-        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        <div class="project-intro">
+            <a href="../../index.html" class="back-link">← Back to Portfolio</a>
 
-        <div class="project-header">
-            <h1>Microservices API Orchestration</h1>
-            <p class="subtitle">Event-driven architecture with saga patterns and distributed transaction management</p>
+            <div class="project-header">
+                <h1>Microservices API Orchestration</h1>
+                <p class="subtitle">Event-driven architecture with saga patterns and distributed transaction
+                    management</p>
 
-            <div class="project-meta">
-                <div class="meta-item">
-                    <strong>Role:</strong> Solutions Architect / Backend Developer
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Role:</strong> Solutions Architect / Backend Developer
+                    </div>
+                    <div class="meta-item">
+                        <strong>Duration:</strong> 8 Months
+                    </div>
+                    <div class="meta-item">
+                        <strong>Status:</strong> Production
+                    </div>
                 </div>
-                <div class="meta-item">
-                    <strong>Duration:</strong> 8 Months
-                </div>
-                <div class="meta-item">
-                    <strong>Status:</strong> Production
-                </div>
-            </div>
 
-            <div class="tech-stack">
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">RabbitMQ</span>
-                <span class="tech-badge">Kafka</span>
-                <span class="tech-badge">Docker</span>
-                <span class="tech-badge">Kubernetes</span>
-                <span class="tech-badge">MongoDB</span>
-                <span class="tech-badge">Redis</span>
-                <span class="tech-badge">Jaeger</span>
-            </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">RabbitMQ</span>
+                    <span class="tech-badge">Kafka</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Kubernetes</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">Jaeger</span>
+                </div>
 
-            <div class="cta-buttons">
-                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
-                <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/microservices-orchestration"
-                    class="btn-secondary" target="_blank">Browse Code</a>
+                <div class="cta-buttons">
+                    <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                    <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/microservices-orchestration"
+                        class="btn-secondary" target="_blank">Browse Code</a>
+                </div>
             </div>
         </div>
 
@@ -76,9 +79,11 @@
                     <h2>🎯 Project Overview</h2>
                     <p>Designed and implemented a distributed microservices architecture handling complex business
                         workflows
-                        across 15+ independent services. The system uses event-driven communication with RabbitMQ and
+                        across 15+ independent services. The system uses event-driven communication with RabbitMQ
+                        and
                         Kafka,
-                        implementing saga patterns for distributed transactions. Features comprehensive observability
+                        implementing saga patterns for distributed transactions. Features comprehensive
+                        observability
                         with
                         distributed tracing, centralized logging, and real-time monitoring.</p>
 
@@ -105,20 +110,24 @@
                 <div id="features" class="content-section">
                     <h2>🚀 Key Features</h2>
                     <ul>
-                        <li><strong>Event-Driven Architecture:</strong> Asynchronous communication using RabbitMQ and
+                        <li><strong>Event-Driven Architecture:</strong> Asynchronous communication using RabbitMQ
+                            and
                             Kafka message brokers</li>
                         <li><strong>Saga Pattern Implementation:</strong> Choreography-based sagas for distributed
                             transaction management</li>
-                        <li><strong>API Gateway:</strong> Single entry point with request routing, authentication, and
+                        <li><strong>API Gateway:</strong> Single entry point with request routing, authentication,
+                            and
                             rate limiting</li>
-                        <li><strong>Service Discovery:</strong> Automatic service registration and health checking with
+                        <li><strong>Service Discovery:</strong> Automatic service registration and health checking
+                            with
                             Consul</li>
                         <li><strong>Distributed Tracing:</strong> End-to-end request tracing with Jaeger and
                             OpenTelemetry</li>
                         <li><strong>Circuit Breaker:</strong> Resilience patterns to prevent cascading failures</li>
                         <li><strong>Event Sourcing:</strong> Complete audit trail with event store for critical
                             workflows</li>
-                        <li><strong>CQRS Pattern:</strong> Separate read and write models for optimized performance</li>
+                        <li><strong>CQRS Pattern:</strong> Separate read and write models for optimized performance
+                        </li>
                     </ul>
                 </div>
 
@@ -380,7 +389,8 @@ eventBus.<span class="function">subscribe</span>(<span class="string">'Inventory
                             <div class="solution-block">
                                 <h4>Solution</h4>
                                 <p>Implemented circuit breaker pattern with fallback mechanisms. Added bulkhead
-                                    isolation to prevent resource exhaustion. Used async messaging to decouple services,
+                                    isolation to prevent resource exhaustion. Used async messaging to decouple
+                                    services,
                                     reducing synchronous dependencies by 70%.</p>
                             </div>
                         </div>
@@ -389,8 +399,10 @@ eventBus.<span class="function">subscribe</span>(<span class="string">'Inventory
                             <p>Ensuring correct processing order for related events in distributed system.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Used Kafka partitioning with aggregate IDs as partition keys to guarantee ordering
-                                    within same aggregate. Implemented optimistic locking with version numbers to detect
+                                <p>Used Kafka partitioning with aggregate IDs as partition keys to guarantee
+                                    ordering
+                                    within same aggregate. Implemented optimistic locking with version numbers to
+                                    detect
                                     and handle out-of-order updates.</p>
                             </div>
                         </div>
@@ -399,8 +411,10 @@ eventBus.<span class="function">subscribe</span>(<span class="string">'Inventory
                             <p>Tracing requests across 15+ services with complex async workflows.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Integrated OpenTelemetry with Jaeger for distributed tracing. Added correlation IDs
-                                    to all messages and logs. Built custom Grafana dashboards showing end-to-end request
+                                <p>Integrated OpenTelemetry with Jaeger for distributed tracing. Added correlation
+                                    IDs
+                                    to all messages and logs. Built custom Grafana dashboards showing end-to-end
+                                    request
                                     flows with latency breakdowns per service.</p>
                             </div>
                         </div>

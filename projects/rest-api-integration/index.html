@@ -21,38 +21,41 @@
     <canvas id="bg-canvas"></canvas>
 
     <div class="project-showcase">
-        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        <div class="project-intro">
+            <a href="../../index.html" class="back-link">← Back to Portfolio</a>
 
-        <div class="project-header">
-            <h1>REST API Integration Hub</h1>
-            <p class="subtitle">Enterprise-grade API integration platform with intelligent routing and monitoring</p>
+            <div class="project-header">
+                <h1>REST API Integration Hub</h1>
+                <p class="subtitle">Enterprise-grade API integration platform with intelligent routing and
+                    monitoring</p>
 
-            <div class="project-meta">
-                <div class="meta-item">
-                    <strong>Role:</strong> Backend Developer / Integration Specialist
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Role:</strong> Backend Developer / Integration Specialist
+                    </div>
+                    <div class="meta-item">
+                        <strong>Duration:</strong> 6 Months
+                    </div>
+                    <div class="meta-item">
+                        <strong>Status:</strong> Production
+                    </div>
                 </div>
-                <div class="meta-item">
-                    <strong>Duration:</strong> 6 Months
-                </div>
-                <div class="meta-item">
-                    <strong>Status:</strong> Production
-                </div>
-            </div>
 
-            <div class="tech-stack">
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">Express.js</span>
-                <span class="tech-badge">REST APIs</span>
-                <span class="tech-badge">Redis</span>
-                <span class="tech-badge">PostgreSQL</span>
-                <span class="tech-badge">Docker</span>
-                <span class="tech-badge">AWS Lambda</span>
-            </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express.js</span>
+                    <span class="tech-badge">REST APIs</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">AWS Lambda</span>
+                </div>
 
-            <div class="cta-buttons">
-                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
-                <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/rest-api-integration"
-                    class="btn-secondary" target="_blank">Browse Code</a>
+                <div class="cta-buttons">
+                    <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                    <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/rest-api-integration"
+                        class="btn-secondary" target="_blank">Browse Code</a>
+                </div>
             </div>
         </div>
 
@@ -75,8 +78,10 @@
                     <h2>📡 Project Overview</h2>
                     <p>Built a comprehensive API integration platform that connects multiple third-party services
                         including
-                        payment processors, shipping providers, CRM systems, and analytics platforms. The system handles
-                        over 1 million API calls daily with 99.9% uptime, featuring intelligent rate limiting, automatic
+                        payment processors, shipping providers, CRM systems, and analytics platforms. The system
+                        handles
+                        over 1 million API calls daily with 99.9% uptime, featuring intelligent rate limiting,
+                        automatic
                         retry mechanisms, and comprehensive error handling.</p>
 
                     <div class="metrics-grid">
@@ -102,13 +107,17 @@
                 <div id="features" class="content-section">
                     <h2>🎯 Key Features</h2>
                     <ul>
-                        <li><strong>Unified API Gateway:</strong> Single entry point for all external API communications
+                        <li><strong>Unified API Gateway:</strong> Single entry point for all external API
+                            communications
                             with consistent error handling</li>
-                        <li><strong>Intelligent Rate Limiting:</strong> Per-vendor rate limiting with automatic backoff
+                        <li><strong>Intelligent Rate Limiting:</strong> Per-vendor rate limiting with automatic
+                            backoff
                             and queue management</li>
-                        <li><strong>Response Caching:</strong> Redis-based caching layer reducing redundant API calls by
+                        <li><strong>Response Caching:</strong> Redis-based caching layer reducing redundant API
+                            calls by
                             40%</li>
-                        <li><strong>Automatic Retries:</strong> Exponential backoff retry logic for transient failures
+                        <li><strong>Automatic Retries:</strong> Exponential backoff retry logic for transient
+                            failures
                         </li>
                         <li><strong>Request/Response Logging:</strong> Comprehensive audit trail for debugging and
                             compliance</li>
@@ -170,7 +179,8 @@
                     <div class="challenges-grid">
                         <div class="challenge-card">
                             <h3>Rate Limit Management</h3>
-                            <p>Different vendors have varying rate limits and quota systems, causing throttling errors
+                            <p>Different vendors have varying rate limits and quota systems, causing throttling
+                                errors
                                 during peak traffic.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
@@ -186,7 +196,8 @@
                             <div class="solution-block">
                                 <h4>Solution</h4>
                                 <p>Created adapter pattern-based architecture with version-specific handlers.
-                                    Implemented automated migration scripts and comprehensive testing suite to ensure
+                                    Implemented automated migration scripts and comprehensive testing suite to
+                                    ensure
                                     smooth transitions between API versions.</p>
                             </div>
                         </div>
@@ -195,18 +206,21 @@
                             <p>Inconsistent error formats and status codes across different API providers.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Built a unified error normalization layer that translates vendor-specific errors into
+                                <p>Built a unified error normalization layer that translates vendor-specific errors
+                                    into
                                     standardized format. Implemented circuit breaker pattern to prevent cascading
                                     failures.</p>
                             </div>
                         </div>
                         <div class="challenge-card">
                             <h3>Data Synchronization</h3>
-                            <p>Keeping data consistent across multiple systems with different update frequencies.</p>
+                            <p>Keeping data consistent across multiple systems with different update frequencies.
+                            </p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
                                 <p>Designed event-driven architecture using AWS SQS for asynchronous processing.
-                                    Implemented idempotency keys and conflict resolution strategies to handle duplicate
+                                    Implemented idempotency keys and conflict resolution strategies to handle
+                                    duplicate
                                     events.</p>
                             </div>
                         </div>
@@ -218,7 +232,8 @@
                     <h3>System Components</h3>
                     <ul>
                         <li><strong>API Gateway:</strong> Express.js server handling routing and authentication</li>
-                        <li><strong>Service Layer:</strong> Vendor-specific adapters with standardized interfaces</li>
+                        <li><strong>Service Layer:</strong> Vendor-specific adapters with standardized interfaces
+                        </li>
                         <li><strong>Cache Layer:</strong> Redis for response caching and rate limit tracking</li>
                         <li><strong>Queue System:</strong> AWS SQS for asynchronous job processing</li>
                         <li><strong>Database:</strong> PostgreSQL for transaction logs and configuration</li>
@@ -273,6 +288,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="../../script.js"></script>

@@ -21,38 +21,41 @@
     <canvas id="bg-canvas"></canvas>
 
     <div class="project-showcase">
-        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        <div class="project-intro">
+            <a href="../../index.html" class="back-link">← Back to Portfolio</a>
 
-        <div class="project-header">
-            <h1>GraphQL API Gateway</h1>
-            <p class="subtitle">Unified data layer for microservices with Apollo Federation and schema stitching</p>
+            <div class="project-header">
+                <h1>GraphQL API Gateway</h1>
+                <p class="subtitle">Unified data layer for microservices with Apollo Federation and schema stitching
+                </p>
 
-            <div class="project-meta">
-                <div class="meta-item">
-                    <strong>Role:</strong> API Architect / Backend Developer
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Role:</strong> API Architect / Backend Developer
+                    </div>
+                    <div class="meta-item">
+                        <strong>Duration:</strong> 5 Months
+                    </div>
+                    <div class="meta-item">
+                        <strong>Status:</strong> Production
+                    </div>
                 </div>
-                <div class="meta-item">
-                    <strong>Duration:</strong> 5 Months
-                </div>
-                <div class="meta-item">
-                    <strong>Status:</strong> Production
-                </div>
-            </div>
 
-            <div class="tech-stack">
-                <span class="tech-badge">GraphQL</span>
-                <span class="tech-badge">Apollo Server</span>
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">TypeScript</span>
-                <span class="tech-badge">Redis</span>
-                <span class="tech-badge">DataLoader</span>
-                <span class="tech-badge">Kubernetes</span>
-            </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">GraphQL</span>
+                    <span class="tech-badge">Apollo Server</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Redis</span>
+                    <span class="tech-badge">DataLoader</span>
+                    <span class="tech-badge">Kubernetes</span>
+                </div>
 
-            <div class="cta-buttons">
-                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
-                <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/graphql-gateway"
-                    class="btn-secondary" target="_blank">Browse Code</a>
+                <div class="cta-buttons">
+                    <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                    <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/graphql-gateway"
+                        class="btn-secondary" target="_blank">Browse Code</a>
+                </div>
             </div>
         </div>
 
@@ -73,9 +76,12 @@
             <div class="project-main">
                 <div id="overview" class="content-section">
                     <h2>🚀 Project Overview</h2>
-                    <p>Designed and implemented a unified GraphQL gateway that aggregates 8 microservices into a single,
-                        cohesive API. Using Apollo Federation, the gateway provides a type-safe, performant data layer
-                        that eliminates over-fetching and under-fetching issues. The system handles complex queries with
+                    <p>Designed and implemented a unified GraphQL gateway that aggregates 8 microservices into a
+                        single,
+                        cohesive API. Using Apollo Federation, the gateway provides a type-safe, performant data
+                        layer
+                        that eliminates over-fetching and under-fetching issues. The system handles complex queries
+                        with
                         N+1 problem resolution through DataLoader batching, reducing database queries by 80%.</p>
 
                     <div class="metrics-grid">
@@ -101,15 +107,19 @@
                 <div id="features" class="content-section">
                     <h2>🎯 Key Features</h2>
                     <ul>
-                        <li><strong>Apollo Federation:</strong> Distributed schema composition across multiple subgraphs
+                        <li><strong>Apollo Federation:</strong> Distributed schema composition across multiple
+                            subgraphs
                         </li>
-                        <li><strong>Type Safety:</strong> Full TypeScript implementation with auto-generated types from
+                        <li><strong>Type Safety:</strong> Full TypeScript implementation with auto-generated types
+                            from
                             schema</li>
-                        <li><strong>DataLoader Batching:</strong> Automatic request batching and caching to solve N+1
+                        <li><strong>DataLoader Batching:</strong> Automatic request batching and caching to solve
+                            N+1
                             queries</li>
                         <li><strong>Query Complexity Analysis:</strong> Prevents expensive queries with configurable
                             complexity limits</li>
-                        <li><strong>Persisted Queries:</strong> APQ (Automatic Persisted Queries) for reduced bandwidth
+                        <li><strong>Persisted Queries:</strong> APQ (Automatic Persisted Queries) for reduced
+                            bandwidth
                         </li>
                         <li><strong>Real-time Subscriptions:</strong> WebSocket-based subscriptions for live data
                             updates</li>
@@ -170,7 +180,8 @@
                     <div class="challenges-grid">
                         <div class="challenge-card">
                             <h3>N+1 Query Problem</h3>
-                            <p>Nested GraphQL queries causing exponential database calls, leading to severe performance
+                            <p>Nested GraphQL queries causing exponential database calls, leading to severe
+                                performance
                                 degradation.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
@@ -181,10 +192,12 @@
                         </div>
                         <div class="challenge-card">
                             <h3>Schema Coordination</h3>
-                            <p>Managing schema changes across 8 independent microservices without breaking clients.</p>
+                            <p>Managing schema changes across 8 independent microservices without breaking clients.
+                            </p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Adopted Apollo Federation with schema composition validation in CI/CD. Implemented
+                                <p>Adopted Apollo Federation with schema composition validation in CI/CD.
+                                    Implemented
                                     schema registry for version control and automated compatibility checks before
                                     deployment.</p>
                             </div>
@@ -194,17 +207,21 @@
                             <p>Malicious or poorly written queries consuming excessive server resources.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Built query complexity analyzer that assigns cost to each field. Implemented depth
-                                    limiting and configurable complexity budgets per user tier, preventing DoS attacks.
+                                <p>Built query complexity analyzer that assigns cost to each field. Implemented
+                                    depth
+                                    limiting and configurable complexity budgets per user tier, preventing DoS
+                                    attacks.
                                 </p>
                             </div>
                         </div>
                         <div class="challenge-card">
                             <h3>Error Handling</h3>
-                            <p>Inconsistent error formats from different microservices making debugging difficult.</p>
+                            <p>Inconsistent error formats from different microservices making debugging difficult.
+                            </p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Created unified error handling middleware that normalizes errors into GraphQL error
+                                <p>Created unified error handling middleware that normalizes errors into GraphQL
+                                    error
                                     format. Added error codes, stack traces in dev mode, and correlation IDs for
                                     distributed tracing.</p>
                             </div>
@@ -218,7 +235,8 @@
                     <ul>
                         <li><strong>Gateway Layer:</strong> Apollo Gateway for schema composition and query planning
                         </li>
-                        <li><strong>Subgraph Services:</strong> 8 federated services with domain-specific schemas</li>
+                        <li><strong>Subgraph Services:</strong> 8 federated services with domain-specific schemas
+                        </li>
                         <li><strong>Data Layer:</strong> DataLoader for batching and caching</li>
                         <li><strong>Cache Layer:</strong> Redis for query result caching and session storage</li>
                         <li><strong>Monitoring:</strong> Apollo Studio for performance tracking and error monitoring
@@ -305,6 +323,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="../../script.js"></script>

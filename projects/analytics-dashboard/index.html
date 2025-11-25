@@ -21,37 +21,39 @@
     <canvas id="bg-canvas"></canvas>
 
     <div class="project-showcase">
-        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        <div class="project-intro">
+            <a href="../../index.html" class="back-link">← Back to Portfolio</a>
 
-        <div class="project-header">
-            <h1>Real-Time Analytics Dashboard</h1>
-            <p class="subtitle">High-performance visualization platform for live business metrics</p>
+            <div class="project-header">
+                <h1>Real-Time Analytics Dashboard</h1>
+                <p class="subtitle">High-performance visualization platform for live business metrics</p>
 
-            <div class="project-meta">
-                <div class="meta-item">
-                    <strong>Role:</strong> Full Stack Developer
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Role:</strong> Full Stack Developer
+                    </div>
+                    <div class="meta-item">
+                        <strong>Duration:</strong> 4 Months
+                    </div>
+                    <div class="meta-item">
+                        <strong>Status:</strong> Live
+                    </div>
                 </div>
-                <div class="meta-item">
-                    <strong>Duration:</strong> 4 Months
-                </div>
-                <div class="meta-item">
-                    <strong>Status:</strong> Live
-                </div>
-            </div>
 
-            <div class="tech-stack">
-                <span class="tech-badge">React.js</span>
-                <span class="tech-badge">Node.js</span>
-                <span class="tech-badge">MongoDB</span>
-                <span class="tech-badge">Socket.io</span>
-                <span class="tech-badge">Chart.js</span>
-                <span class="tech-badge">Redis</span>
-            </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">React.js</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Socket.io</span>
+                    <span class="tech-badge">Chart.js</span>
+                    <span class="tech-badge">Redis</span>
+                </div>
 
-            <div class="cta-buttons">
-                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
-                <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/analytics-dashboard"
-                    class="btn-secondary" target="_blank">Browse Code</a>
+                <div class="cta-buttons">
+                    <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                    <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/analytics-dashboard"
+                        class="btn-secondary" target="_blank">Browse Code</a>
+                </div>
             </div>
         </div>
 
@@ -72,8 +74,10 @@
                 <div id="overview" class="content-section">
                     <h2>📊 Project Overview</h2>
                     <p>A full-stack analytics platform built to visualize critical business metrics in real-time. By
-                        leveraging WebSockets for live data streaming and optimized MongoDB aggregation pipelines, this
-                        dashboard provides stakeholders with up-to-the-second insights without performance bottlenecks.
+                        leveraging WebSockets for live data streaming and optimized MongoDB aggregation pipelines,
+                        this
+                        dashboard provides stakeholders with up-to-the-second insights without performance
+                        bottlenecks.
                     </p>
 
                     <div class="metrics-grid">
@@ -101,11 +105,13 @@
                     <ul>
                         <li><strong>Live Data Streaming:</strong> Socket.io integration pushes updates to the client
                             instantly</li>
-                        <li><strong>Interactive Visualizations:</strong> Dynamic charts (Line, Bar, Heatmap) built with
+                        <li><strong>Interactive Visualizations:</strong> Dynamic charts (Line, Bar, Heatmap) built
+                            with
                             Chart.js</li>
                         <li><strong>Query Optimization:</strong> Advanced MongoDB aggregation pipelines reduce data
                             processing time</li>
-                        <li><strong>Caching Layer:</strong> Redis implementation for frequently accessed metrics</li>
+                        <li><strong>Caching Layer:</strong> Redis implementation for frequently accessed metrics
+                        </li>
                         <li><strong>Responsive Design:</strong> Mobile-first layout ensuring accessibility on all
                             devices
                         </li>
@@ -120,7 +126,8 @@
                             <p>High latency when aggregating millions of records for real-time display.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Implemented a Redis caching layer for pre-aggregated metrics and optimized MongoDB
+                                <p>Implemented a Redis caching layer for pre-aggregated metrics and optimized
+                                    MongoDB
                                     indexes, reducing query time by 60%.</p>
                             </div>
                         </div>
@@ -169,6 +176,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="../../script.js"></script>

@@ -22,36 +22,38 @@
     <canvas id="bg-canvas"></canvas>
 
     <div class="project-showcase">
-        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+        <div class="project-intro">
+            <a href="../../index.html" class="back-link">← Back to Portfolio</a>
 
-        <div class="project-header">
-            <h1>Snowflake ETL Pipeline</h1>
-            <p class="subtitle">Production-grade data pipeline for retail transaction processing</p>
+            <div class="project-header">
+                <h1>Snowflake ETL Pipeline</h1>
+                <p class="subtitle">Production-grade data pipeline for retail transaction processing</p>
 
-            <div class="project-meta">
-                <div class="meta-item">
-                    <strong>Role:</strong> Data Engineer
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Role:</strong> Data Engineer
+                    </div>
+                    <div class="meta-item">
+                        <strong>Duration:</strong> Ongoing
+                    </div>
+                    <div class="meta-item">
+                        <strong>Status:</strong> Production-Ready
+                    </div>
                 </div>
-                <div class="meta-item">
-                    <strong>Duration:</strong> Ongoing
-                </div>
-                <div class="meta-item">
-                    <strong>Status:</strong> Production-Ready
-                </div>
-            </div>
 
-            <div class="tech-stack">
-                <span class="tech-badge">Python 3.9+</span>
-                <span class="tech-badge">Snowflake</span>
-                <span class="tech-badge">Pandas</span>
-                <span class="tech-badge">SQL</span>
-                <span class="tech-badge">pytest</span>
-                <span class="tech-badge">Docker</span>
-            </div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python 3.9+</span>
+                    <span class="tech-badge">Snowflake</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">pytest</span>
+                    <span class="tech-badge">Docker</span>
+                </div>
 
-            <div class="cta-buttons">
-                <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
-                <a href="src/" class="btn-secondary" target="_blank">Browse Code</a>
+                <div class="cta-buttons">
+                    <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+                    <a href="src/" class="btn-secondary" target="_blank">Browse Code</a>
+                </div>
             </div>
         </div>
 
@@ -74,9 +76,11 @@
             <div class="project-main">
                 <div id="overview" class="content-section">
                     <h2>📊 Project Overview</h2>
-                    <p>A production-grade ETL (Extract, Transform, Load) pipeline designed to process retail transaction
+                    <p>A production-grade ETL (Extract, Transform, Load) pipeline designed to process retail
+                        transaction
                         data at scale. Built with Python and Snowflake Cloud Data Platform, this system handles data
-                        extraction from multiple sources, applies comprehensive transformations and quality checks, and
+                        extraction from multiple sources, applies comprehensive transformations and quality checks,
+                        and
                         efficiently loads data into Snowflake for analytics.</p>
 
                     <div class="metrics-grid">
@@ -102,14 +106,17 @@
                 <div id="features" class="content-section">
                     <h2>🎯 Key Features</h2>
                     <ul>
-                        <li><strong>Multi-Source Extraction:</strong> Supports CSV, JSON, and REST API data sources</li>
+                        <li><strong>Multi-Source Extraction:</strong> Supports CSV, JSON, and REST API data sources
+                        </li>
                         <li><strong>Data Quality Validation:</strong> Automated checks for null values, data types,
                             duplicates, and constraints</li>
                         <li><strong>Scalable Architecture:</strong> Optimized for bulk loading using Snowflake's
                             write_pandas function</li>
-                        <li><strong>Error Handling:</strong> Comprehensive logging and retry mechanisms for production
+                        <li><strong>Error Handling:</strong> Comprehensive logging and retry mechanisms for
+                            production
                             reliability</li>
-                        <li><strong>Testing Suite:</strong> Unit tests with pytest ensuring code quality and reliability
+                        <li><strong>Testing Suite:</strong> Unit tests with pytest ensuring code quality and
+                            reliability
                         </li>
                         <li><strong>Documentation:</strong> Complete setup guide and API documentation</li>
                     </ul>
@@ -134,7 +141,8 @@
                                 structures.</p>
                             <div class="solution-block">
                                 <h4>Solution</h4>
-                                <p>Developed a flexible schema validation layer using Pydantic models to enforce strict
+                                <p>Developed a flexible schema validation layer using Pydantic models to enforce
+                                    strict
                                     typing before data enters the pipeline.</p>
                             </div>
                         </div>
@@ -145,11 +153,14 @@
                     <h2>🏗️ Architecture</h2>
                     <h3>Pipeline Flow</h3>
                     <ul>
-                        <li><strong>Extract:</strong> DataExtractor pulls data from configured sources (CSV, JSON, APIs)
+                        <li><strong>Extract:</strong> DataExtractor pulls data from configured sources (CSV, JSON,
+                            APIs)
                         </li>
-                        <li><strong>Transform:</strong> DataTransformer cleans, validates, and enriches the data</li>
+                        <li><strong>Transform:</strong> DataTransformer cleans, validates, and enriches the data
+                        </li>
                         <li><strong>Load:</strong> SnowflakeLoader efficiently writes data to Snowflake tables</li>
-                        <li><strong>Orchestration:</strong> Main pipeline coordinates all steps with error handling</li>
+                        <li><strong>Orchestration:</strong> Main pipeline coordinates all steps with error handling
+                        </li>
                     </ul>
 
                     <h3>Code Example - ETL Pipeline</h3>
@@ -179,14 +190,17 @@ pipeline.<span class="function">run</span>(
                         <li><strong>Snowflake Integration:</strong> Leverages Snowflake Connector for Python with
                             optimized
                             bulk loading</li>
-                        <li><strong>Data Quality Score:</strong> Each row gets a quality score based on completeness and
+                        <li><strong>Data Quality Score:</strong> Each row gets a quality score based on completeness
+                            and
                             validation rules</li>
                         <li><strong>Modular Design:</strong> Separate modules for extract, transform, and load
                             operations
                             enable reusability</li>
-                        <li><strong>Environment Management:</strong> Uses python-dotenv for secure credential handling
+                        <li><strong>Environment Management:</strong> Uses python-dotenv for secure credential
+                            handling
                         </li>
-                        <li><strong>SQL Schema Management:</strong> Includes DDL scripts for creating Snowflake tables
+                        <li><strong>SQL Schema Management:</strong> Includes DDL scripts for creating Snowflake
+                            tables
                             with
                             proper indexing</li>
                     </ul>
@@ -215,6 +229,7 @@ pipeline.<span class="function">run</span>(
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="../../script.js"></script>

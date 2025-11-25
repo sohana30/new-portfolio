@@ -103,7 +103,12 @@ function initCanvas() {
         particles.push(new Particle());
     }
 
+    let animationId;
+    let isVisible = true;
+
     function animate() {
+        if (!isVisible) return;
+
         ctx.clearRect(0, 0, width, height);
 
         // Update and draw particles
@@ -130,9 +135,20 @@ function initCanvas() {
             }
         }
 
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
     }
 
+    // Pause animation when canvas is not visible
+    const canvasObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            isVisible = entry.isIntersecting;
+            if (isVisible && !animationId) {
+                animate();
+            }
+        });
+    }, { threshold: 0 });
+
+    canvasObserver.observe(canvas);
     animate();
 }
 
@@ -147,13 +163,6 @@ function initScrollAnimations() {
             }
         });
     }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-        section.style.opacity = 0;
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(section);
-    });
 
     sections.forEach(section => {
         section.style.opacity = 0;
@@ -561,8 +570,6 @@ function initContactForm() {
     });
 }
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', initContactForm);
 function initParallax() {
     const hero = document.getElementById('hero');
     const heroContent = document.querySelector('.hero-content');

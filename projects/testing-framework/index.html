@@ -172,7 +172,7 @@
     <span class="keyword">assert</span> df[<span class="string">'transaction_id'</span>].<span class="function">notna</span>().<span class="function">all</span>(), <span class="string">"Null transaction IDs found"</span>
     
     <span class="comment"># Validate business logic</span>
-    <span class="keyword">assert</span> (df[<span class="string">'amount'</span>] <span class="operator">&gt;</span> <span class="number">0</span>).<span class="function">all</span>(), <span class="string">"Negative transaction amounts detected"</span>
+    <span class="keyword">assert</span> (df[<span class="string">'amount'</span>] <span class="operator">></span> <span class="number">0</span>).<span class="function">all</span>(), <span class="string">"Negative transaction amounts detected"</span>
     
     <span class="comment"># Verify row counts match source</span>
     source_count <span class="operator">=</span> <span class="function">get_source_count</span>()

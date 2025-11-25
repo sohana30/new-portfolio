@@ -172,104 +172,20 @@ function initScrollAnimations() {
     });
 }
 
-function initTerminal() {
+async function initTerminal() {
     const terminal = document.querySelector('.terminal-window');
     if (!terminal) return;
 
-    const files = {
-        'languages': {
-            name: 'languages.json',
-            type: 'json',
-            content: `[
-  {
-    "language": "Python",
-    "proficiency": "Expert",
-    "usage": "Data Engineering, ETL, Scripting",
-    "years_experience": 4
-  },
-  {
-    "language": "SQL",
-    "proficiency": "Advanced",
-    "usage": "Data Warehousing, Analytics",
-    "dialects": ["Snowflake", "PostgreSQL", "MySQL"]
-  },
-  {
-    "language": "JavaScript",
-    "proficiency": "Intermediate",
-    "usage": "Frontend, Visualization",
-    "frameworks": ["React", "D3.js"]
-  },
-  {
-    "language": "Java",
-    "proficiency": "Intermediate",
-    "usage": "Backend Services",
-    "years_experience": 2
-  }
-]`
-        },
-        'frameworks': {
-            name: 'frameworks.yaml',
-            type: 'yaml',
-            content: `# Frontend Development
-frontend:
-  core:
-    - name: React.js
-      version: 18.x
-      features: [Hooks, Context API]
-    - name: Next.js
-      type: SSR/SSG framework
-    - Vue.js
-    - Bootstrap
-    - jQuery
-  languages:
-    - HTML5
-    - CSS3 (Sass)
-    - JavaScript
-  tools:
-    - AJAX
-    - Figma (Web Designing)
-
-# Backend & API
-backend:
-  runtime: Node.js (v16+)
-  frameworks:
-    - Express.js
-    - Fastify
-  database_orm:
-    - Prisma
-    - Mongoose
-
-# Data Engineering
-data_stack:
-  processing: [Pandas, NumPy, Spark]
-  orchestration: [Airflow, Prefect]
-  warehousing: [Snowflake, Redshift]`
-        },
-        'infrastructure': {
-            name: 'infrastructure.sh',
-            type: 'shell',
-            content: `#!/bin/bash
-
-echo "Initializing system health check..."
-sleep 0.5
-
-# Cloud Infrastructure
-check_service "AWS Cloud" "us-east-1" "Active"
-check_service "Snowflake Data Cloud" "Enterprise" "Connected"
-
-# Containerization
-check_container "Docker Engine" "v24.0.2" "Running"
-check_container "Kubernetes Cluster" "v1.27" "Healthy"
-
-# CI/CD Pipelines
-check_pipeline "GitHub Actions" "Build & Test" "Passing"
-check_pipeline "Terraform State" "Remote Backend" "Locked"
-
-echo "----------------------------------------"
-echo "System Status: ALL SYSTEMS OPERATIONAL"
-echo "Ready for deployment."`
-        }
-    };
+    // Fetch skills data from content.json
+    let files = {};
+    try {
+        const response = await fetch('content.json');
+        const data = await response.json();
+        files = data.skills || {};
+    } catch (error) {
+        console.error('Error loading terminal content:', error);
+        return;
+    }
 
     const codeDisplay = document.getElementById('code-display');
     const lineNumbers = document.querySelector('.line-numbers');

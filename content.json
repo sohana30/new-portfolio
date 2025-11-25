@@ -1,0 +1,295 @@
+{
+    "hero": {
+        "greeting": "Hi, I'm Sohana",
+        "title": "TECHNICAL ANALYST / DEVELOPER",
+        "subtitle": "Bridging Business Needs with Technical Solutions",
+        "description": "Enthusiastic and detail-oriented professional with 5+ years of experience in software development, data analysis, and creating scalable digital solutions. Passionate about using technology to solve real-world problems."
+    },
+    "about": {
+        "paragraphs": [
+            "I am a <strong>versatile team player and independent contributor</strong> with a strong background as a Technical Analyst & Developer. I possess acute attention to detail, critical reasoning skills, and a knack for problem-solving.",
+            "With over <strong>5 years of experience</strong>, I have worked on building scalable web applications, optimizing databases, and developing robust solutions as an <strong>Technical Analyst/Developer</strong>. My expertise spans <strong>Frontend Development (React, Next.js), Snowflake, AWS, and automated testing frameworks</strong>.",
+            "Currently working as a <strong>part-time Data Contractor at Alloy.ai</strong>"
+        ],
+        "stats": [
+            {
+                "number": "5+",
+                "label": "Years Exp"
+            },
+            {
+                "number": "SQL",
+                "label": "Expert"
+            },
+            {
+                "number": "Frontend",
+                "label": "React/Next.js"
+            },
+            {
+                "number": "Cloud",
+                "label": "Snowflake/AWS"
+            }
+        ]
+    },
+    "skills": {
+        "languages": {
+            "name": "languages.json",
+            "type": "json",
+            "content": "[\n  {\n    \"language\": \"Python\",\n    \"proficiency\": \"Expert\",\n    \"usage\": \"Data Engineering, ETL, Scripting\",\n    \"years_experience\": 4\n  },\n  {\n    \"language\": \"SQL\",\n    \"proficiency\": \"Advanced\",\n    \"usage\": \"Data Warehousing, Analytics\",\n    \"dialects\": [\"Snowflake\", \"PostgreSQL\", \"MySQL\"]\n  },\n  {\n    \"language\": \"JavaScript\",\n    \"proficiency\": \"Intermediate\",\n    \"usage\": \"Frontend, Visualization\",\n    \"frameworks\": [\"React\", \"D3.js\"]\n  },\n  {\n    \"language\": \"Java\",\n    \"proficiency\": \"Intermediate\",\n    \"usage\": \"Backend Services\",\n    \"years_experience\": 2\n  }\n]"
+        },
+        "frameworks": {
+            "name": "frameworks.yaml",
+            "type": "yaml",
+            "content": "# Frontend Development\nfrontend:\n  core:\n    - name: React.js\n      version: 18.x\n      features: [Hooks, Context API]\n    - name: Next.js\n      type: SSR/SSG framework\n    - Vue.js\n    - Bootstrap\n    - jQuery\n  languages:\n    - HTML5\n    - CSS3 (Sass)\n    - JavaScript\n  tools:\n    - AJAX\n    - Figma (Web Designing)\n\n# Backend & API\nbackend:\n  runtime: Node.js (v16+)\n  frameworks:\n    - Express.js\n    - Fastify\n  database_orm:\n    - Prisma\n    - Mongoose\n\n# Data Engineering\ndata_stack:\n  processing: [Pandas, NumPy, Spark]\n  orchestration: [Airflow, Prefect]\n  warehousing: [Snowflake, Redshift]"
+        },
+        "infrastructure": {
+            "name": "infrastructure.sh",
+            "type": "shell",
+            "content": "#!/bin/bash\n\necho \"Initializing system health check...\"\nsleep 0.5\n\n# Cloud Infrastructure\ncheck_service \"AWS Cloud\" \"us-east-1\" \"Active\"\ncheck_service \"Snowflake Data Cloud\" \"Enterprise\" \"Connected\"\n\n# Containerization\ncheck_container \"Docker Engine\" \"v24.0.2\" \"Running\"\ncheck_container \"Kubernetes Cluster\" \"v1.27\" \"Healthy\"\n\n# CI/CD Pipelines\ncheck_pipeline \"GitHub Actions\" \"Build & Test\" \"Passing\"\ncheck_pipeline \"Terraform State\" \"Remote Backend\" \"Locked\"\n\necho \"----------------------------------------\"\necho \"System Status: ALL SYSTEMS OPERATIONAL\"\necho \"Ready for deployment.\""
+        }
+    },
+    "experience": [
+        {
+            "date": "Nov 2024 - Present",
+            "title": "Data Contractor",
+            "type": "Part-time Contract",
+            "company": "Alloy.ai",
+            "description": "Utilizing Snowflake Cloud Data Platform to extract, transform, and prepare Walmart data for reporting. Writing complex SQL queries and adapting to technologies like SAP Analytics Cloud."
+        },
+        {
+            "date": "July 2025 - Present",
+            "title": "Programmer/Analyst",
+            "type": "Full-time Contract",
+            "company": "Okanagan College",
+            "description": "Creating enterprise web platforms tailored to client requirements using HTML5, PHP, CSS3, SASS, MySQL, Twig, AWS, Lando, Docker, Kubernetes, and Drupal. Conducting thorough testing and QA. Mentoring developers and collaborating with clients to resolve issues and delivering timely solutions."
+        },
+        {
+            "date": "Oct 2023 - July 2025",
+            "title": "Analyst/Developer",
+            "type": "Freelance",
+            "company": "Loop Rideshare",
+            "description": "Partnered with stakeholders to document needs and analyze data for business insights. Managed end-to-end development projects using Agile workflows and delivered high-quality, scalable code."
+        },
+        {
+            "date": "Jan 2023 - Sept 2023",
+            "title": "Front-end Developer",
+            "type": "Full-time",
+            "company": "Acro Media",
+            "description": "Designed and implemented web templates using React, Next.js, and Drupal. Optimized assets and wrote integration tests with Cypress. Contributed to responsive and accessible design solutions."
+        },
+        {
+            "date": "April 2021 - Jan 2023",
+            "title": "Developer",
+            "type": "Full-time",
+            "company": "Northern Commerce",
+            "description": "Built functional elements using React.js, Twig, and Drupal. Conducted QA and utilized GitFlow for code integration. Managed Google Tag Manager implementations."
+        },
+        {
+            "date": "Sept 2020 - Feb 2021",
+            "title": "PHP Developer",
+            "type": "Part-time",
+            "company": "iDigiCare",
+            "description": "Developed customized web applications using CodeIgniter and PHP. Collaborated with cross-functional teams and implemented security best practices."
+        }
+    ],
+    "education": [
+        {
+            "icon": "🎓",
+            "degree": "Post-Graduation Certificate",
+            "program": "Interactive Media Specialist",
+            "school": "Fanshawe College, London, ON",
+            "wesLink": null
+        },
+        {
+            "icon": "🎓",
+            "degree": "Post-Graduation Certificate",
+            "program": "Software and Information System Testing",
+            "school": "Fanshawe College, London, ON",
+            "wesLink": null
+        },
+        {
+            "icon": "🎓",
+            "degree": "Bachelor's Degree (WES Certified)",
+            "program": "Computer Engineering",
+            "school": "Gujarat Technological University, India",
+            "wesLink": "https://www.credly.com/badges/7a9b89a2-6806-44b0-aa57-cf2b343037c3"
+        }
+    ],
+    "certifications": [
+        {
+            "icon": "🔒",
+            "title": "Networks and Network Security",
+            "description": "Connect and Protect: Advanced network security protocols",
+            "providers": [
+                {
+                    "name": "Google",
+                    "class": "google"
+                },
+                {
+                    "name": "Coursera",
+                    "class": "coursera"
+                }
+            ]
+        },
+        {
+            "icon": "🛡️",
+            "title": "Manage Security Risks",
+            "description": "Play It Safe: Security risk management and mitigation",
+            "providers": [
+                {
+                    "name": "Google",
+                    "class": "google"
+                },
+                {
+                    "name": "Coursera",
+                    "class": "coursera"
+                }
+            ]
+        },
+        {
+            "icon": "🐳",
+            "title": "Docker Containerization",
+            "description": "Container orchestration and deployment strategies",
+            "providers": [
+                {
+                    "name": "Docker",
+                    "class": "docker"
+                }
+            ]
+        },
+        {
+            "icon": "⚡",
+            "title": "Advanced JavaScript",
+            "description": "Modern ES6+ features and async programming",
+            "providers": [
+                {
+                    "name": "JavaScript",
+                    "class": "js"
+                }
+            ]
+        },
+        {
+            "icon": "☁️",
+            "title": "AWS Cloud Computing",
+            "description": "Cloud infrastructure and serverless architecture",
+            "providers": [
+                {
+                    "name": "AWS",
+                    "class": "aws"
+                }
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "id": "snowflake-etl-pipeline",
+            "title": "Snowflake ETL Pipeline (Production)",
+            "description": "Production ETL system processing retail data using Snowflake Cloud Platform. Wrote complex SQL queries for data transformation, validation, and multi-department reporting with 99.9% accuracy.",
+            "tags": [
+                "Snowflake",
+                "Python",
+                "SQL",
+                "ETL"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/snowflake-etl-pipeline",
+            "detailsUrl": "projects/snowflake-etl-pipeline/index.html"
+        },
+        {
+            "id": "testing-framework",
+            "title": "Automated Testing Framework for Data Pipelines",
+            "description": "Built comprehensive test automation suite using Selenium, Cypress, and Playwright. Ensures data integrity across web applications and APIs with 95% code coverage.",
+            "tags": [
+                "Python",
+                "Selenium",
+                "Cypress",
+                "CI/CD"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/testing-framework",
+            "detailsUrl": "projects/testing-framework/index.html"
+        },
+        {
+            "id": "analytics-dashboard",
+            "title": "Real-Time Analytics Dashboard",
+            "description": "Full-stack analytics platform using React.js, Node.js, and MongoDB. Visualizes business metrics in real-time with optimized database queries reducing load time by 60%.",
+            "tags": [
+                "React.js",
+                "Node.js",
+                "MongoDB",
+                "REST API"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/analytics-dashboard",
+            "detailsUrl": "projects/analytics-dashboard/index.html"
+        },
+        {
+            "id": "cloud-migration",
+            "title": "Cloud Migration & Data Warehouse Optimization",
+            "description": "Migrated legacy MySQL databases to AWS cloud infrastructure. Implemented Docker containerization and optimized queries, reducing operational costs by 35%.",
+            "tags": [
+                "AWS",
+                "Docker",
+                "MySQL",
+                "Performance Tuning"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/cloud-migration",
+            "detailsUrl": "projects/cloud-migration/index.html"
+        },
+        {
+            "id": "rest-api-integration",
+            "title": "REST API Integration Hub",
+            "description": "Enterprise API integration platform connecting 12+ third-party services including payment processors, shipping providers, and CRM systems. Features intelligent rate limiting, caching, and handles 1M+ daily API calls with 99.9% uptime.",
+            "tags": [
+                "Node.js",
+                "REST APIs",
+                "Redis",
+                "AWS Lambda"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/rest-api-integration",
+            "detailsUrl": "projects/rest-api-integration/index.html"
+        },
+        {
+            "id": "graphql-gateway",
+            "title": "GraphQL API Gateway",
+            "description": "Unified GraphQL gateway aggregating 8 microservices using Apollo Federation. Implements DataLoader batching reducing database queries by 80%, with type-safe schema stitching and real-time subscriptions.",
+            "tags": [
+                "GraphQL",
+                "Apollo Server",
+                "TypeScript",
+                "Kubernetes"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/graphql-gateway",
+            "detailsUrl": "projects/graphql-gateway/index.html"
+        },
+        {
+            "id": "microservices-orchestration",
+            "title": "Microservices API Orchestration",
+            "description": "Event-driven architecture orchestrating 15+ microservices with saga patterns for distributed transactions. Implements RabbitMQ, Kafka messaging, circuit breakers, and distributed tracing with Jaeger processing 500K+ events daily.",
+            "tags": [
+                "Microservices",
+                "RabbitMQ",
+                "Kafka",
+                "Kubernetes"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/microservices-orchestration",
+            "detailsUrl": "projects/microservices-orchestration/index.html"
+        },
+        {
+            "id": "api-security-gateway",
+            "title": "API Security Gateway",
+            "description": "Enterprise security platform with OAuth2, JWT authentication, multi-tier rate limiting, and DDoS protection. Features WAF rules, ML-based anomaly detection, and processes 2M+ requests daily while blocking 50K+ threats.",
+            "tags": [
+                "OAuth2",
+                "JWT",
+                "Security",
+                "Rate Limiting"
+            ],
+            "githubUrl": "https://github.com/sohana30/new-portfolio/tree/main/projects/api-security-gateway",
+            "detailsUrl": "projects/api-security-gateway/index.html"
+        }
+    ],
+    "contact": {
+        "description": "Currently open for new opportunities. Whether you have a question or just want to discuss architectures, my inbox is open.",
+        "formAction": "https://formspree.io/f/xgvqedgl",
+        "email": "sohanaakadiwala@gmail.com",
+        "github": "https://github.com/sohana30",
+        "linkedin": "https://www.linkedin.com/in/sohana-kadiwala-3b1b3b1b3/"
+    }
+}

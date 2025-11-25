@@ -4405,10 +4405,105 @@ html.lenis body {
     /* Challenge cards */
     .challenge-card:hover {
         transform: none;
+        background: rgba(30, 41, 59, 0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.1);
     }
 
     .challenge-card:active {
-        transform: translateY(-2px) scale(0.98);
+        transform: translateY(-5px) scale(0.98);
+        background: rgba(30, 41, 59, 0.8);
+        box-shadow: 0 20px 50px -12px rgba(139, 92, 246, 0.3);
+        border-color: rgba(139, 92, 246, 0.6);
+    }
+
+    .challenge-card:active::after {
+        transform: scaleX(1);
+    }
+
+    /* Metric cards */
+    .metric-card:hover {
+        transform: none;
+    }
+
+    .metric-card:active {
+        transform: translateY(-3px) scale(0.97);
+        background: rgba(139, 92, 246, 0.15);
+        border-color: rgba(139, 92, 246, 0.5);
+    }
+
+    /* Tech badges in project headers */
+    .tech-badge:hover {
+        transform: none;
+        background: rgba(139, 92, 246, 0.05);
+    }
+
+    .tech-badge:active {
+        transform: scale(0.95);
+        background: rgba(139, 92, 246, 0.2);
+        color: #fff;
+        border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    /* Project navigation links */
+    .project-nav a:hover {
+        transform: none;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    }
+
+    .project-nav a:active {
+        transform: scale(0.96);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+        border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    .project-nav a.active:active {
+        transform: scale(0.98);
+    }
+
+    /* CTA Buttons on project pages */
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+
+    .btn-primary:active {
+        transform: scale(0.96);
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-secondary:active {
+        transform: scale(0.96);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Back link */
+    .back-link:hover {
+        transform: none;
+    }
+
+    .back-link:active {
+        transform: translateX(-3px);
+        color: var(--accent);
+    }
+
+    /* Code preview sections */
+    .code-preview:hover {
+        transform: none;
+    }
+
+    .code-preview:active {
+        border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    /* Solution blocks */
+    .solution-block:hover {
+        transform: none;
+    }
+
+    .solution-block:active {
+        background: rgba(34, 197, 94, 0.08);
+        border-color: rgba(34, 197, 94, 0.3);
     }
 
     /* Navigation links */
@@ -4430,5 +4525,67 @@ html.lenis body {
     /* Active states for stats */
     .stat:active {
         transform: translateX(5px) scale(0.98);
+    }
+
+    /* Metric cards */
+    .metric-card:hover {
+        transform: none;
+    }
+
+    .metric-card:active {
+        transform: translateY(-3px) scale(0.97);
+        box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Code preview */
+    .code-preview:hover {
+        transform: none;
+    }
+
+    /* Solution blocks */
+    .solution-block:hover {
+        transform: none;
+    }
+
+    .solution-block:active {
+        transform: scale(0.99);
+    }
+
+    /* Project navigation links */
+    .project-nav a:hover {
+        transform: none;
+    }
+
+    .project-nav a:active {
+        transform: scale(0.96);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.08));
+    }
+
+    /* Back link */
+    .back-link:hover {
+        transform: none;
+    }
+
+    .back-link:active {
+        transform: translateX(-3px);
+    }
+
+    /* CTA buttons on project pages */
+    .cta-buttons a:hover {
+        transform: none;
+    }
+
+    .cta-buttons a:active {
+        transform: scale(0.96);
+    }
+
+    /* File items in terminal */
+    .file-item:hover {
+        transform: none;
+    }
+
+    .file-item:active {
+        transform: translateX(3px);
+        background: rgba(139, 92, 246, 0.15);
     }
 }

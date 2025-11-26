@@ -3312,7 +3312,8 @@ footer::before {
     /* Project Meta Mobile */
     .project-meta .meta-item {
         font-size: 0.9rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        justify-content: center;
     }
 
     /* CTA Buttons in Project Header */

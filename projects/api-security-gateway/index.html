@@ -21,6 +21,46 @@
   <canvas id="bg-canvas"></canvas>
 
   <div class="project-showcase">
+    <div class="project-intro">
+      <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+
+      <div class="project-header">
+        <h1>API Security Gateway</h1>
+        <p class="subtitle">Enterprise security platform with OAuth2, DDoS protection, and intelligent threat
+          detection
+        </p>
+
+        <div class="project-meta">
+          <div class="meta-item">
+            <strong>Role:</strong> Security Engineer / Backend Developer
+          </div>
+          <div class="meta-item">
+            <strong>Duration:</strong> 7 Months
+          </div>
+          <div class="meta-item">
+            <strong>Status:</strong> Production
+          </div>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">OAuth2</span>
+          <span class="tech-badge">JWT</span>
+          <span class="tech-badge">Redis</span>
+          <span class="tech-badge">Nginx</span>
+          <span class="tech-badge">WAF</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">Elasticsearch</span>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
+          <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/api-security-gateway"
+            class="btn-secondary" target="_blank">Browse Code</a>
+        </div>
+      </div>
+    </div>
+
     <div class="project-layout">
       <aside class="project-sidebar">
         <nav class="project-nav">
@@ -35,150 +75,96 @@
         </nav>
       </aside>
 
-      <div class="project-content-wrapper">
-        <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+      <div class="project-main">
+        <div id="overview" class="content-section">
+          <h2>🔒 Project Overview</h2>
+          <p>Built a comprehensive API security gateway that protects backend services from unauthorized access,
+            DDoS attacks, and malicious traffic. The system implements OAuth2/OpenID Connect for authentication,
+            multi-tier rate limiting, Web Application Firewall (WAF) rules, and ML-based anomaly detection.
+            Processes 2M+ requests daily while blocking 50K+ malicious attempts.</p>
 
-        <div class="project-header">
-          <h1>API Security Gateway</h1>
-          <p class="subtitle">Enterprise security platform with OAuth2, DDoS protection, and intelligent threat
-            detection
-          </p>
-
-          <div class="project-meta">
-            <div class="meta-item">
-              <strong>Role:</strong> Security Engineer / Backend Developer
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-value">2M+</span>
+              <span class="metric-label">Requests/Day</span>
             </div>
-            <div class="meta-item">
-              <strong>Duration:</strong> 7 Months
+            <div class="metric-card">
+              <span class="metric-value">50K+</span>
+              <span class="metric-label">Threats Blocked</span>
             </div>
-            <div class="meta-item">
-              <strong>Status:</strong> Production
+            <div class="metric-card">
+              <span class="metric-value">99.99%</span>
+              <span class="metric-label">Uptime</span>
             </div>
-          </div>
-
-          <div class="tech-stack">
-            <span class="tech-badge">Node.js</span>
-            <span class="tech-badge">OAuth2</span>
-            <span class="tech-badge">JWT</span>
-            <span class="tech-badge">Redis</span>
-            <span class="tech-badge">Nginx</span>
-            <span class="tech-badge">WAF</span>
-            <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">Elasticsearch</span>
-          </div>
-
-          <div class="cta-buttons">
-            <a href="README.md" class="btn-primary" target="_blank">View Documentation</a>
-            <a href="https://github.com/sohana30/new-portfolio/tree/main/projects/api-security-gateway"
-              class="btn-secondary" target="_blank">Browse Code</a>
+            <div class="metric-card">
+              <span class="metric-value">&lt;5ms</span>
+              <span class="metric-label">Auth Overhead</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="project-layout">
-        <aside class="project-sidebar">
-          <nav class="project-nav">
-            <h3>Contents</h3>
-            <ul>
-              <li><a href="#overview">Overview</a></li>
-              <li><a href="#features">Security Features</a></li>
-              <li><a href="#authentication">Authentication</a></li>
-              <li><a href="#protection">Threat Protection</a></li>
-              <li><a href="#challenges">Challenges & Solutions</a></li>
-            </ul>
-          </nav>
-        </aside>
+        <div id="features" class="content-section">
+          <h2>🛡️ Security Features</h2>
+          <ul>
+            <li><strong>OAuth2 & OpenID Connect:</strong> Industry-standard authentication with multiple grant types
+            </li>
+            <li><strong>JWT Token Management:</strong> Secure token generation, validation, and refresh mechanisms
+            </li>
+            <li><strong>Multi-Tier Rate Limiting:</strong> Per-user, per-IP, and per-endpoint rate limits</li>
+            <li><strong>DDoS Protection:</strong> Automatic detection and mitigation of volumetric attacks</li>
+            <li><strong>Web Application Firewall:</strong> OWASP Top 10 protection with custom rule engine</li>
+            <li><strong>API Key Management:</strong> Secure key generation, rotation, and revocation</li>
+            <li><strong>Request Signing:</strong> HMAC-based request authentication for sensitive operations</li>
+            <li><strong>Anomaly Detection:</strong> ML-based detection of suspicious traffic patterns</li>
+          </ul>
+        </div>
 
-        <div class="project-main">
-          <div id="overview" class="content-section">
-            <h2>🔒 Project Overview</h2>
-            <p>Built a comprehensive API security gateway that protects backend services from unauthorized access,
-              DDoS attacks, and malicious traffic. The system implements OAuth2/OpenID Connect for authentication,
-              multi-tier rate limiting, Web Application Firewall (WAF) rules, and ML-based anomaly detection.
-              Processes 2M+ requests daily while blocking 50K+ malicious attempts.</p>
+        <div id="authentication" class="content-section">
+          <h2>🔐 Authentication & Authorization</h2>
 
-            <div class="metrics-grid">
-              <div class="metric-card">
-                <span class="metric-value">2M+</span>
-                <span class="metric-label">Requests/Day</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-value">50K+</span>
-                <span class="metric-label">Threats Blocked</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-value">99.99%</span>
-                <span class="metric-label">Uptime</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-value">&lt;5ms</span>
-                <span class="metric-label">Auth Overhead</span>
-              </div>
+          <h3>OAuth2 Implementation</h3>
+          <div class="challenges-grid">
+            <div class="challenge-card">
+              <h3>Authorization Code Flow</h3>
+              <ul>
+                <li>PKCE support for mobile/SPA apps</li>
+                <li>State parameter for CSRF protection</li>
+                <li>Consent screen for scope approval</li>
+                <li>Refresh token rotation</li>
+              </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>Client Credentials Flow</h3>
+              <ul>
+                <li>Machine-to-machine authentication</li>
+                <li>Client secret management</li>
+                <li>Scope-based access control</li>
+                <li>Token introspection endpoint</li>
+              </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>JWT Token Structure</h3>
+              <ul>
+                <li>RS256 signing algorithm</li>
+                <li>Custom claims for permissions</li>
+                <li>Short-lived access tokens (15 min)</li>
+                <li>Long-lived refresh tokens (30 days)</li>
+              </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>Token Validation</h3>
+              <ul>
+                <li>Signature verification with public key</li>
+                <li>Expiration and not-before checks</li>
+                <li>Issuer and audience validation</li>
+                <li>Token revocation list checking</li>
+              </ul>
             </div>
           </div>
 
-          <div id="features" class="content-section">
-            <h2>🛡️ Security Features</h2>
-            <ul>
-              <li><strong>OAuth2 & OpenID Connect:</strong> Industry-standard authentication with multiple grant types
-              </li>
-              <li><strong>JWT Token Management:</strong> Secure token generation, validation, and refresh mechanisms
-              </li>
-              <li><strong>Multi-Tier Rate Limiting:</strong> Per-user, per-IP, and per-endpoint rate limits</li>
-              <li><strong>DDoS Protection:</strong> Automatic detection and mitigation of volumetric attacks</li>
-              <li><strong>Web Application Firewall:</strong> OWASP Top 10 protection with custom rule engine</li>
-              <li><strong>API Key Management:</strong> Secure key generation, rotation, and revocation</li>
-              <li><strong>Request Signing:</strong> HMAC-based request authentication for sensitive operations</li>
-              <li><strong>Anomaly Detection:</strong> ML-based detection of suspicious traffic patterns</li>
-            </ul>
-          </div>
-
-          <div id="authentication" class="content-section">
-            <h2>🔐 Authentication & Authorization</h2>
-
-            <h3>OAuth2 Implementation</h3>
-            <div class="challenges-grid">
-              <div class="challenge-card">
-                <h3>Authorization Code Flow</h3>
-                <ul>
-                  <li>PKCE support for mobile/SPA apps</li>
-                  <li>State parameter for CSRF protection</li>
-                  <li>Consent screen for scope approval</li>
-                  <li>Refresh token rotation</li>
-                </ul>
-              </div>
-              <div class="challenge-card">
-                <h3>Client Credentials Flow</h3>
-                <ul>
-                  <li>Machine-to-machine authentication</li>
-                  <li>Client secret management</li>
-                  <li>Scope-based access control</li>
-                  <li>Token introspection endpoint</li>
-                </ul>
-              </div>
-              <div class="challenge-card">
-                <h3>JWT Token Structure</h3>
-                <ul>
-                  <li>RS256 signing algorithm</li>
-                  <li>Custom claims for permissions</li>
-                  <li>Short-lived access tokens (15 min)</li>
-                  <li>Long-lived refresh tokens (30 days)</li>
-                </ul>
-              </div>
-              <div class="challenge-card">
-                <h3>Token Validation</h3>
-                <ul>
-                  <li>Signature verification with public key</li>
-                  <li>Expiration and not-before checks</li>
-                  <li>Issuer and audience validation</li>
-                  <li>Token revocation list checking</li>
-                </ul>
-              </div>
-            </div>
-
-            <h3>Code Example - JWT Middleware</h3>
-            <div class="code-preview">
-              <pre>
+          <h3>Code Example - JWT Middleware</h3>
+          <div class="code-preview">
+            <pre>
 <span class="comment">// JWT Authentication Middleware</span>
 <span class="keyword">const</span> jwt <span class="operator">=</span> <span class="function">require</span>(<span class="string">'jsonwebtoken'</span>);
 <span class="keyword">const</span> { promisify } <span class="operator">=</span> <span class="function">require</span>(<span class="string">'util'</span>);
@@ -247,15 +233,15 @@
     <span class="keyword">return</span> requiredPermissions.<span class="function">every</span>(p <span class="operator">=&gt;</span> userPermissions.<span class="function">includes</span>(p));
   }
 }</pre>
-            </div>
           </div>
+        </div>
 
-          <div id="protection" class="content-section">
-            <h2>🛡️ Threat Protection</h2>
+        <div id="protection" class="content-section">
+          <h2>🛡️ Threat Protection</h2>
 
-            <h3>Rate Limiting Strategy</h3>
-            <div class="code-preview">
-              <pre>
+          <h3>Rate Limiting Strategy</h3>
+          <div class="code-preview">
+            <pre>
 <span class="comment">// Sliding Window Rate Limiter</span>
 <span class="keyword">class</span> <span class="class-name">SlidingWindowRateLimiter</span> {
   <span class="function">constructor</span>(redisClient) {
@@ -340,118 +326,118 @@ app.<span class="function">use</span>(<span class="keyword">async</span> (req, r
     <span class="function">next</span>(error);
   }
 });</pre>
-            </div>
+          </div>
 
-            <h3>WAF Rules & DDoS Protection</h3>
-            <div class="challenges-grid">
-              <div class="challenge-card">
-                <h3>SQL Injection Prevention</h3>
-                <ul>
-                  <li>Pattern matching for SQL keywords</li>
-                  <li>Parameterized query enforcement</li>
-                  <li>Input sanitization and validation</li>
-                  <li>Automatic request blocking and logging</li>
-                </ul>
+          <h3>WAF Rules & DDoS Protection</h3>
+          <div class="challenges-grid">
+            <div class="challenge-card">
+              <h3>SQL Injection Prevention</h3>
+              <ul>
+                <li>Pattern matching for SQL keywords</li>
+                <li>Parameterized query enforcement</li>
+                <li>Input sanitization and validation</li>
+                <li>Automatic request blocking and logging</li>
+              </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>XSS Protection</h3>
+              <ul>
+                <li>Content Security Policy headers</li>
+                <li>HTML entity encoding</li>
+                <li>Script tag detection and blocking</li>
+                <li>Reflected XSS prevention</li>
+              </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>DDoS Mitigation</h3>
+              <ul>
+                <li>Connection rate limiting</li>
+                <li>Slowloris attack detection</li>
+                <li>IP reputation checking</li>
+                <li>Automatic IP blacklisting</li>
+              </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>Bot Detection</h3>
+              <ul>
+                <li>User-Agent analysis</li>
+                <li>Behavioral fingerprinting</li>
+                <li>CAPTCHA challenges for suspicious traffic</li>
+                <li>Honeypot endpoints</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="challenges" class="content-section">
+          <h2>⚡ Challenges & Solutions</h2>
+          <div class="challenges-grid">
+            <div class="challenge-card">
+              <h3>Token Storage Security</h3>
+              <p>Securing refresh tokens while maintaining performance for high-traffic API.</p>
+              <div class="solution-block">
+                <h4>Solution</h4>
+                <p>Implemented token rotation with Redis-backed storage. Refresh tokens are hashed before storage and
+                  automatically rotated on each use. Added token family tracking to detect token theft and revoke
+                  entire
+                  token families when suspicious activity is detected.</p>
               </div>
-              <div class="challenge-card">
-                <h3>XSS Protection</h3>
-                <ul>
-                  <li>Content Security Policy headers</li>
-                  <li>HTML entity encoding</li>
-                  <li>Script tag detection and blocking</li>
-                  <li>Reflected XSS prevention</li>
-                </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>Distributed Rate Limiting</h3>
+              <p>Maintaining accurate rate limits across multiple gateway instances.</p>
+              <div class="solution-block">
+                <h4>Solution</h4>
+                <p>Used Redis with sliding window algorithm for distributed rate limiting. Implemented Lua scripts for
+                  atomic operations ensuring accuracy even under high concurrency. Added local caching layer to reduce
+                  Redis load by 60%.</p>
               </div>
-              <div class="challenge-card">
-                <h3>DDoS Mitigation</h3>
-                <ul>
-                  <li>Connection rate limiting</li>
-                  <li>Slowloris attack detection</li>
-                  <li>IP reputation checking</li>
-                  <li>Automatic IP blacklisting</li>
-                </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>False Positive Reduction</h3>
+              <p>WAF rules blocking legitimate traffic while trying to catch attacks.</p>
+              <div class="solution-block">
+                <h4>Solution</h4>
+                <p>Built ML model trained on historical traffic patterns to distinguish legitimate from malicious
+                  requests. Implemented confidence scoring system where low-confidence blocks trigger manual review.
+                  Reduced false positives by 85% while maintaining 99% threat detection rate.</p>
               </div>
-              <div class="challenge-card">
-                <h3>Bot Detection</h3>
-                <ul>
-                  <li>User-Agent analysis</li>
-                  <li>Behavioral fingerprinting</li>
-                  <li>CAPTCHA challenges for suspicious traffic</li>
-                  <li>Honeypot endpoints</li>
-                </ul>
+            </div>
+            <div class="challenge-card">
+              <h3>Performance Impact</h3>
+              <p>Security checks adding latency to every API request.</p>
+              <div class="solution-block">
+                <h4>Solution</h4>
+                <p>Optimized JWT verification by caching public keys and using async validation. Implemented request
+                  fingerprinting to skip redundant checks for known-good clients. Reduced authentication overhead from
+                  25ms to under 5ms.</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <div id="challenges" class="content-section">
-            <h2>⚡ Challenges & Solutions</h2>
-            <div class="challenges-grid">
-              <div class="challenge-card">
-                <h3>Token Storage Security</h3>
-                <p>Securing refresh tokens while maintaining performance for high-traffic API.</p>
-                <div class="solution-block">
-                  <h4>Solution</h4>
-                  <p>Implemented token rotation with Redis-backed storage. Refresh tokens are hashed before storage and
-                    automatically rotated on each use. Added token family tracking to detect token theft and revoke
-                    entire
-                    token families when suspicious activity is detected.</p>
-                </div>
-              </div>
-              <div class="challenge-card">
-                <h3>Distributed Rate Limiting</h3>
-                <p>Maintaining accurate rate limits across multiple gateway instances.</p>
-                <div class="solution-block">
-                  <h4>Solution</h4>
-                  <p>Used Redis with sliding window algorithm for distributed rate limiting. Implemented Lua scripts for
-                    atomic operations ensuring accuracy even under high concurrency. Added local caching layer to reduce
-                    Redis load by 60%.</p>
-                </div>
-              </div>
-              <div class="challenge-card">
-                <h3>False Positive Reduction</h3>
-                <p>WAF rules blocking legitimate traffic while trying to catch attacks.</p>
-                <div class="solution-block">
-                  <h4>Solution</h4>
-                  <p>Built ML model trained on historical traffic patterns to distinguish legitimate from malicious
-                    requests. Implemented confidence scoring system where low-confidence blocks trigger manual review.
-                    Reduced false positives by 85% while maintaining 99% threat detection rate.</p>
-                </div>
-              </div>
-              <div class="challenge-card">
-                <h3>Performance Impact</h3>
-                <p>Security checks adding latency to every API request.</p>
-                <div class="solution-block">
-                  <h4>Solution</h4>
-                  <p>Optimized JWT verification by caching public keys and using async validation. Implemented request
-                    fingerprinting to skip redundant checks for known-good clients. Reduced authentication overhead from
-                    25ms to under 5ms.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="content-section">
+          <h2>📊 Security Metrics</h2>
+          <ul>
+            <li><strong>Threat Detection:</strong> 50K+ malicious requests blocked daily</li>
+            <li><strong>False Positive Rate:</strong> Less than 0.1% of legitimate traffic blocked</li>
+            <li><strong>DDoS Mitigation:</strong> Successfully mitigated 15+ DDoS attacks</li>
+            <li><strong>Authentication Speed:</strong> JWT validation under 5ms</li>
+            <li><strong>Compliance:</strong> SOC 2, PCI DSS, and GDPR compliant</li>
+          </ul>
 
-          <div class="content-section">
-            <h2>📊 Security Metrics</h2>
-            <ul>
-              <li><strong>Threat Detection:</strong> 50K+ malicious requests blocked daily</li>
-              <li><strong>False Positive Rate:</strong> Less than 0.1% of legitimate traffic blocked</li>
-              <li><strong>DDoS Mitigation:</strong> Successfully mitigated 15+ DDoS attacks</li>
-              <li><strong>Authentication Speed:</strong> JWT validation under 5ms</li>
-              <li><strong>Compliance:</strong> SOC 2, PCI DSS, and GDPR compliant</li>
-            </ul>
-
-            <h3>Monitoring & Alerting</h3>
-            <ul>
-              <li>Real-time threat dashboard with Grafana</li>
-              <li>Elasticsearch for security event logging and analysis</li>
-              <li>Automated alerts for anomalous traffic patterns</li>
-              <li>Weekly security reports with threat intelligence</li>
-              <li>Integration with SIEM systems for enterprise security</li>
-            </ul>
-          </div>
+          <h3>Monitoring & Alerting</h3>
+          <ul>
+            <li>Real-time threat dashboard with Grafana</li>
+            <li>Elasticsearch for security event logging and analysis</li>
+            <li>Automated alerts for anomalous traffic patterns</li>
+            <li>Weekly security reports with threat intelligence</li>
+            <li>Integration with SIEM systems for enterprise security</li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="../../script.js"></script>

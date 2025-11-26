@@ -115,12 +115,12 @@ function populateProjects(projects) {
 
     if (projectsGrid) {
         projectsGrid.innerHTML = projects.map(project => `
-            <div class="project-card">
+            <div class="project-card" onclick="window.location.href='${project.detailsUrl}'" style="cursor: pointer;">
                 <div class="card-header">
                     <span class="folder-icon">📁</span>
                     <div class="links">
-                        <a href="${project.githubUrl}" target="_blank">View Code</a>
-                        <a href="${project.detailsUrl}" target="_blank">Details</a>
+                        <a href="${project.githubUrl}" target="_blank" onclick="event.stopPropagation()">View Code</a>
+                        <a href="${project.detailsUrl}" target="_blank" onclick="event.stopPropagation()">Details</a>
                     </div>
                 </div>
                 <h4>${project.title}</h4>

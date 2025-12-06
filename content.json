@@ -34,7 +34,7 @@
         "languages": {
             "name": "languages.json",
             "type": "json",
-            "content": "[\n  {\n    \"language\": \"Python\",\n    \"proficiency\": \"Expert\",\n    \"usage\": \"Data Engineering, ETL, Scripting\",\n    \"years_experience\": 4\n  },\n  {\n    \"language\": \"SQL\",\n    \"proficiency\": \"Advanced\",\n    \"usage\": \"Data Warehousing, Analytics\",\n    \"dialects\": [\"Snowflake\", \"PostgreSQL\", \"MySQL\"]\n  },\n  {\n    \"language\": \"JavaScript\",\n    \"proficiency\": \"Intermediate\",\n    \"usage\": \"Frontend, Visualization\",\n    \"frameworks\": [\"React\", \"D3.js\"]\n  },\n  {\n    \"language\": \"Java\",\n    \"proficiency\": \"Intermediate\",\n    \"usage\": \"Backend Services\",\n    \"years_experience\": 2\n  }\n]"
+            "content": "[\n  {\n    \"language\": \"Python\",\n    \"proficiency\": \"Intermediate\",\n    \"usage\": \"Data Engineering, ETL, Scripting\",\n    \"years_experience\": 2\n  },\n  {\n    \"language\": \"SQL\",\n    \"proficiency\": \"Advanced\",\n    \"usage\": \"Data Warehousing, Analytics\",\n    \"dialects\": [\"Snowflake\", \"PostgreSQL\", \"MySQL\"]\n  },\n  {\n    \"language\": \"JavaScript\",\n    \"proficiency\": \"Expert\",\n    \"usage\": \"Frontend, Visualization\",\n    \"frameworks\": [\"React\", \"D3.js\"]\n  },\n  {\n    \"language\": \"Java\",\n    \"proficiency\": \"Intermediate\",\n    \"usage\": \"Backend Services\",\n    \"years_experience\": 2\n  }\n]"
         },
         "frameworks": {
             "name": "frameworks.yaml",
@@ -60,7 +60,7 @@
             "title": "Programmer/Analyst",
             "type": "Full-time Contract",
             "company": "Okanagan College",
-            "description": "Creating enterprise web platforms tailored to client requirements using HTML5, PHP, CSS3, SASS, MySQL, Twig, AWS, Lando, Docker, Kubernetes, and Drupal. Working with agents and give inputs for AI driven solutions. Conducting thorough testing and QA. Mentoring developers and collaborating with clients to resolve issues and delivering timely solutions."
+            "description": "Creating enterprise web platforms tailored to client requirements using HTML5, PHP, CSS3, SASS, MySQL, Git, Twig, JavaScript, AWS, Lando, Docker, Kubernetes, and Drupal. Proficient in AI driven solutions and architecture. Conducting thorough testing and QA. Mentoring teams and collaborating with clients to resolve issues and delivering timely solutions."
         },
         {
             "date": "Oct 2023 - July 2025",
